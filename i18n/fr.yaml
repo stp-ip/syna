@@ -3,6 +3,8 @@
   translation: "Site web conçu à partir de"
 - id: fr
   translation: "Français"
+- id: present
+  translation: "Actuel"
 
 # Content
 - id: content.readmore
@@ -81,3 +83,7 @@
   translation: "Modifier la somme"
 - id: stripe.change_currency
   translation: "Modifier la monnaie"
+
+# Resumic
+- id: resumic.in
+  translation: "en"

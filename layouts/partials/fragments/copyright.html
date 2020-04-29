@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      {{- if eq .Params.attribution true }}
+      {{- if .Params.attribution }}
         <div class="col-auto mx-auto">
           <div class="row mx-0 navbar-text text-center
             {{- partial "helpers/text-color.html" (dict "self" $self "light" "white" "dark" "black-50") -}}

@@ -1,0 +1,45 @@
+ToDo:
+* legal section updates
+* legal.identifier instead of idNumber
+* use item example twice
+
+Ideas:
+Use bibtex or bibjson for publications? or add bibtex field 14
+
+group skills by area?
+
+filter + tags 10
+
+localization 80/81
+
+relax schema with more optional fields etc. 119
+
+theme ToDo:
+* personal
+* publications
+* legal
+* color optimization especially around primary
+* check text-color usage all necessary?
+* icon text-color usage correct?
+* migrate arnells resume and test design -> get feedback
+* location: mapbox api key where to configure? global? proxy service? -->
+* location: config for accuracy? country-region-city, country-city, city, region-city -->
+* fall through image support
+* base64 encoding images gotten from url (https://github.com/gohugoio/hugo/pull/5686)
+* syna resumic example using okkur projects etc. testing edge cases etc. and being checked by cypress (after all is done)
+* sort sections in resumic.html
+* default localized version to english in code
+* downloadable version aka downloadable config + code to download data as well as (PDF)
+* <hr> for per section summary
+
+* setting to use labels instead of progress bars?
+* summary per skill?
+
+* conformance test aka is all data possibly showing up - could be used later on to show users what fields each theme supports
+
+Iteration thoughts:
+* additional level for summary
+* section summary to have more flexibility for users to explain anomalies good or bad
+* numeric enums to remove the association and make sorting etc. easier for devs - levels now need to be documented
+* disposition data to help with making matches easier to find
+* 

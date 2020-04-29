@@ -1,0 +1,59 @@
+{{- $self := .self -}}
+{{- $bg := .bg -}}
+{{- $resume := .resume -}}
+
+{{- $details := "full" -}}
+{{- with $self.Params.general.details -}}
+    {{- $details = . -}}
+{{- end -}}
+
+{{- /*<!-- Group by "has keywords" and "has no keywords" to make the section visually sorted -->*/ -}}
+{{- $languages := slice -}}
+
+{{- /*<!-- Sort by level if configured -->*/ -}}
+{{- if not $self.Params.general.sort -}}
+    {{- range $resume.languages.languages -}}
+        {{- $languages = $languages | append . -}}
+    {{- end -}}
+{{- else -}}
+    {{- range sort $resume.languages.languages "level" "desc" -}}
+        {{- $languages = $languages | append . -}}
+    {{- end -}}
+{{- end -}}
+
+{{- /*<!-- Map numerical value to text -->*/ -}}
+{{ $level_index := slice "nil" "basic" "conversational" "fluent" "native" }}
+
+<div class="languages-content py-3">
+    {{- partial "fragments/resumic/heading.html" (dict "self" $self "bg" $bg "section" "languages" "icon" "fa-language") -}}
+    <div class="languages-content px-4 text-center text-lg-left
+    {{- partial "helpers/text-color.html" (dict "self" $self) -}}
+    ">
+        {{- range $languages -}}
+            <div class="row pt-2">
+                {{- if .language -}}
+                    <div class="col-12 col-lg-3">
+                        {{- .language -}}
+                        <span class="badge badge-pill badge-primary align-text-bottom mx-1">
+                            {{- if .level -}}
+                                {{- /*<!-- Map numerical value to i18n text -->*/ -}}
+                                {{- i18n (printf "resumic.%s" (index $level_index (int .level))) -}}
+                            {{- end -}}
+                        </span>
+                    </div>
+                {{- end -}}
+                {{- if .level -}}
+                    <div class="col-12 col-lg-9">
+                        {{- /*<!-- Progress starts with 25% and goes up to 100% -->*/ -}}
+                        {{- $percentage := (div (mul (int .level) 100) (sub 5 1)) -}}
+                        <div class="progress mt-1">
+                            <div class="progress-bar pl-2" role="progressbar" style="{{- printf "width: %v%s" $percentage "%" -}}" aria-valuenow="{{- .level -}}" aria-valuemin="1" aria-valuemax="5">
+                            </div>
+                        </div>
+                    </div>
+                {{- end -}}
+            </div>
+        {{- end -}}
+    </div>
+    {{- partial "fragments/resumic/summary.html" (dict "self" $self "summary" $resume.languages.summary "enclose" true) -}}
+</div>

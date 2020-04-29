@@ -1,0 +1,22 @@
+{{- $self := .self -}}
+{{- $score := .score -}}
+{{- $length := (.length | default "3") -}}
+
+{{- with $score -}}
+    {{- $percentage := (div (mul (sub (float .value) (float .worst)) 100) (sub (float .best) (float .worst))) -}}
+    <div class="row pt-1">
+        <div class="col-12 col-lg-{{- printf "%s " $length -}} mr-lg-auto
+        {{- partial "helpers/text-color.html" (dict "self" $self "light" "secondary") -}}
+        ">
+            <div class="progress">
+                <div class="progress-bar text-left pl-2" role="progressbar" style="{{- printf "width: %v%s" $percentage "%" -}}" aria-valuenow="{{- .value -}}" aria-valuemin="{{- .worst -}}" aria-valuemax="{{- .best -}}">
+                    {{- if .label -}}
+                        {{- printf "%s %s" .value .label -}}
+                    {{- else -}}
+                        {{- printf "%s" .value -}}
+                    {{- end -}}
+                </div>
+            </div>
+        </div>
+    </div>
+{{- end -}}

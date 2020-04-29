@@ -1,0 +1,23 @@
+{{- $date_format := "2006-01" -}}
+{{- with .date_format -}}
+    {{- $date_format = .self.Site.Params.date_format -}}
+{{- end -}}
+<!-- Shows a range using a specific date format -->
+<!-- startDate set + endDate set -> range -->
+<!-- startDate set + endDate unset -> range till "Present" -->
+<!-- startDate unset + endDate unset -> no range -->
+<div class="time">
+    {{- with .startDate -}}
+        <span class="startDate">
+            {{- . | dateFormat $date_format -}}
+        </span>
+        {{- printf " ‒ " -}}
+    {{- end -}}
+    <span class="endDate">
+        {{- with .endDate -}}
+            {{- . | dateFormat $date_format -}}
+        {{- else -}}
+          {{- i18n "present" | default "Present" -}}
+        {{- end -}}
+    </span>
+</div>

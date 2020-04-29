@@ -1,0 +1,90 @@
+{{- $self := .self -}}
+{{- $bg := .bg -}}
+{{- $resume := .resume -}}
+
+{{- $details := "full" -}}
+{{- with $self.Params.general.details -}}
+    {{- $details = . -}}
+{{- end -}}
+
+{{- /*<!-- Map numerical value to text -->*/ -}}
+{{ $proficiency_index := slice "nil" "beginner" "early" "competent" "advanced" "expert" }}
+
+{{- /*<!-- Group by "has keywords" and "has no keywords" to make the section visually sorted -->*/ -}}
+{{- $has_keywords := slice -}}
+{{- $has_no_keywords := slice -}}
+
+{{- /*<!-- Sort by level if configured -->*/ -}}
+{{- if not $self.Params.general.sort -}}
+    {{- range where $resume.skills.skills "keywords" "!=" nil -}}
+        {{- $has_keywords = $has_keywords | append . -}}
+    {{- end -}}
+
+    {{- range where $resume.skills.skills "keywords" nil -}}
+        {{- $has_no_keywords = $has_no_keywords | append . -}}
+    {{- end -}}
+{{- else -}}
+    {{- range sort (where $resume.skills.skills "keywords" "!=" nil) "proficiency" "desc" -}}
+        {{- $has_keywords = $has_keywords | append . -}}
+    {{- end -}}
+
+    {{- range sort (where $resume.skills.skills "keywords" nil) "proficiency" "desc" -}}
+        {{- $has_no_keywords = $has_no_keywords | append . -}}
+    {{- end -}}
+{{- end -}}
+
+<div class="skills-content py-3">
+    {{- partial "fragments/resumic/heading.html" (dict "self" $self "bg" $bg "section" "skills" "icon" "fa-tools") -}}
+    <div class="skills-content px-4 text-center text-lg-left
+    {{- partial "helpers/text-color.html" (dict "self" $self) -}}
+    ">
+        {{- range $has_keywords -}}
+            <div class="row pt-2">
+                {{- with .name -}}
+                    <div class="col-12 col-lg-3">
+                        {{- . -}}
+                    </div>
+                {{- end -}}
+                {{- if .proficiency -}}
+                    <div class="col-12 col-lg-9">
+                        {{- /*<!-- Progress starts with 20% and goes up to 100% -->*/ -}}
+                        {{- $percentage := (div (mul (int .proficiency) 100) (sub 6 1)) -}}
+                        <div class="progress mt-1">
+                            <div class="progress-bar pl-2" role="progressbar" style="{{- printf "width: %v%s" $percentage "%" -}}" aria-valuenow="{{- .proficiency -}}" aria-valuemin="1" aria-valuemax="5">
+                            </div>
+                        </div>
+                    </div>
+                {{- end -}}
+                {{- if .keywords -}}
+                    <div class="keywords col-12 col-lg-9 offset-lg-3 py-1 pt-lg-0">
+                        {{- range .keywords -}}
+                            <span class="badge badge-pill badge-secondary align-middle m-1" style="font-size:0.7rem">
+                                {{- . -}}
+                            </span>
+                        {{- end -}}
+                    </div>
+                {{- end -}}
+            </div>
+        {{- end -}}
+        {{- range $has_no_keywords -}}
+            <div class="row pt-2">
+                {{- with .name -}}
+                    <div class="col-12 col-lg-3">
+                        {{- . -}}
+                    </div>
+                {{- end -}}
+                {{- if .proficiency -}}
+                    <div class="col-12 col-lg-9">
+                        {{- /*<!-- Progress starts with 20% and goes up to 100% -->*/ -}}
+                        {{- $percentage := (div (mul (int .proficiency) 100) (sub 6 1)) -}}
+                        <div class="progress mt-1">
+                            <div class="progress-bar pl-2" role="progressbar" style="{{- printf "width: %v%s" $percentage "%" -}}" aria-valuenow="{{- .proficiency -}}" aria-valuemin="1" aria-valuemax="5">
+                            </div>
+                        </div>
+                    </div>
+                {{- end -}}
+            </div>
+        {{- end -}}
+    </div>
+    {{- partial "fragments/resumic/summary.html" (dict "self" $self "summary" $resume.skills.summary "enclose" true) -}}
+</div>

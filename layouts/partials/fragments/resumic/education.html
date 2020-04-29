@@ -1,0 +1,295 @@
+{{- $self := .self -}}
+{{- $bg := .bg -}}
+{{- $resume := .resume -}}
+
+{{- $details := "full" -}}
+{{- with $self.Params.general.details -}}
+    {{- $details = . -}}
+{{- end -}}
+
+
+<!-- When sorting, group into present and previous and sort each by startDate -->
+{{- $education := slice -}}
+{{- $education_present := slice -}}
+{{- $education_previous := slice -}}
+{{- if $self.Params.general.sort -}}
+    {{- range .resume.education.education -}}
+        {{- if eq .endDate nil -}}
+            {{- $education_present = $education_present | append . -}}
+        {{- else -}}
+            {{- $education_previous = $education_previous | append . -}}
+        {{- end -}}
+    {{- end -}}
+
+    {{- $education = slice -}}
+    {{- range sort $education_present "startDate" "desc" -}}
+        {{- $education = $education | append . -}}
+    {{- end -}}
+
+    {{- range sort $education_previous "startDate" "desc" -}}
+        {{- $education = $education | append . -}}
+    {{- end -}}
+{{- else -}}
+    {{- range .resume.education.education -}}
+        {{- $education = $education | append . -}}
+    {{- end -}}
+{{- end -}}
+
+<!-- Split by studyStage -->
+{{- $higher := slice -}}
+{{- $secondary := slice -}}
+{{- $primary := slice -}}
+
+{{- range $education -}}
+    {{- if eq .studyStage "higher" -}}
+        {{- $higher = $higher | append . -}}
+    {{- else if and (eq .studyStage "secondary") $self.Params.education.show_secondary -}}
+        {{- $secondary = $secondary | append . -}}
+    {{- else if and (eq .studyStage "primary") $self.Params.education.show_primary -}}
+        {{- $primary = $primary | append . -}}
+    {{- end -}}
+{{- end -}}
+
+<!-- Split into grouped and ungrouped -->
+{{- $ungrouped := slice -}}
+{{- $grouped := slice -}}
+
+{{- $ungrouped = $ungrouped | append $higher -}}
+
+{{- if not $self.Params.education.group_secondary -}}
+    {{- $ungrouped = $ungrouped | append $secondary -}}
+{{- end -}}
+
+{{- if not $self.Params.education.group_primary -}}
+    {{- $ungrouped = $ungrouped | append $primary -}}
+{{- end -}}
+
+<div class="education-content py-3">
+    {{- partial "fragments/resumic/heading.html" (dict "self" $self "bg" $bg "section" "education" "icon" "fa-university") -}}
+    <div class="education-content px-4 text-center
+    {{- partial "helpers/text-color.html" (dict "self" $self) -}}
+    ">
+        {{- /*<!-- Higher Education and ungrouped items -->*/ -}}
+        {{- range $ungrouped -}}
+            <div class="row pt-4">
+                {{- if or .degree .area -}}
+                    <div class="col-12 col-lg-9 text-lg-left
+                    {{- partial "helpers/text-color.html" (dict "self" $self "light" "white") -}}
+                    ">
+                        <h3>
+                            {{- if .degree -}}
+                                <span class="degree d-block d-lg-inline">
+                                    {{- .degree -}}
+                                </span>
+                            {{- end -}}
+                            {{- if .area -}}
+                                <span class="area d-block d-lg-inline">
+                                    {{- printf " %s " (i18n "resumic.in") -}}
+                                    {{- .area -}}
+                                </span>
+                            {{- end -}}
+                            {{- range .honors -}}
+                                <div class="honors d-block d-lg-inline pt-1 mb-n3 mb-lg-n1">
+                                    <span class="badge badge-pill badge-primary align-top" style="font-size:0.7rem">
+                                        {{- . -}}
+                                    </span>
+                                </div>
+                            {{- end -}}
+                        </h3>
+                    </div>
+                {{- end -}}
+                {{- if or .startDate .endDate -}}
+                    <div class="col-12 col-lg-3 col-auto text-lg-right ml-auto
+                    {{- partial "helpers/text-color.html" (dict "self" $self "light" "white") -}}
+                    ">
+                        {{- partial "helpers/range.html" (dict "self" $self "startDate" .startDate "endDate" .endDate) -}}
+                    </div>
+                {{- end -}}
+            </div>
+            <div class="row">
+                {{- partial "fragments/resumic/entity.html" (dict "self" $self "entity" .entity) -}}
+                {{- with .location -}}
+                <div class="col-12 col-lg-3 ml-auto text-lg-right align-self-right
+                {{- partial "helpers/text-color.html" (dict "self" $self "light" "secondary") -}}
+                    ">
+                        <span class="location badge font-italic font-weight-normal">
+                            {{- partial "helpers/location.html" (dict "self" $self "lat" .lat "long" .long) -}}
+                        </span>
+                    </div>
+                {{- end -}}
+            </div>
+            {{- partial "fragments/resumic/score.html" (dict "self" $self "score" .score) -}}
+            {{- partial "fragments/resumic/highlights.html" (dict "self" $self "highlights" .highlights) -}}
+            {{- partial "fragments/resumic/courses.html" (dict "self" $self "courses" .courses) -}}
+            {{- partial "fragments/resumic/summary.html" (dict "self" $self "summary" .summary) -}}
+        {{- end -}}
+        {{- /*<!-- Secondary grouped items -->*/ -}}
+        {{- if and $secondary $self.Params.education.group_secondary -}}
+            <div class="row pt-3">
+                <div class="col-12 col-lg-10 text-lg-left
+                {{- partial "helpers/text-color.html" (dict "self" $self "light" "white") -}}
+                ">
+                    <h3 class="studyStage">
+                        {{- i18n "resumic.secondary" -}}
+                    </h3>
+                </div>
+            </div>
+            {{- range $secondary -}}
+                <hr class="my-1">
+                {{- if or .degree .area .entity.name .startDate .endDate -}}
+                    <div class="row justify-content-between">
+                        {{- if or .degree .area .entity.name -}}
+                            <div class="col-12 col-lg-9 text-lg-left
+                            {{- partial "helpers/text-color.html" (dict "self" $self "light" "secondary") -}}
+                            ">
+                                {{- if .degree -}}
+                                    <span class="degree font-weight-bold">
+                                    {{- .degree -}}
+                                    </span>
+                                {{- end -}}
+                                {{- if .area -}}
+                                    <span class="area d-block d-lg-inline font-weight-bold">
+                                        {{- if .degree -}}
+                                            {{- printf " %s " (i18n "resumic.in") -}}
+                                        {{- end -}}
+                                        {{- .area -}}
+                                    </span>
+                                {{- end -}}
+                                {{- if .entity.name -}}
+                                    <span class="name d-block d-lg-inline font-italic">
+                                        {{- if .degree -}}
+                                            {{- printf " %s " (i18n "resumic.at") -}}
+                                        {{- end -}}
+                                        {{- .entity.name -}}
+                                        {{- if .entity.url -}}
+                                            <a class="url text-decoration-none" style="font-size: 0.6rem;line-height:1.5rem;" href="{{- .entity.url -}}">
+                                                <i class="fas fa-external-link-alt" style="vertical-align:top;"></i>
+                                            </a>
+                                        {{- end -}}
+                                    </span>
+                                    {{- if .entity.description -}}
+                                        <span class="d-none d-lg-inline">{{ printf " ‒ " }}</span>
+                                        <span class="description d-block d-lg-inline font-italic">{{- .entity.description -}}</span>
+                                    {{- end -}}
+                                {{- end -}}
+                                {{- range .honors -}}
+                                    <div class="honors d-block d-lg-inline">
+                                        <span class="badge badge-pill badge-primary align-top" style="font-size:0.7rem">
+                                            {{- . -}}
+                                        </span>
+                                    </div>
+                                {{- end -}}
+                            </div>
+                        {{- end -}}
+                        {{- if or .startDate .endDate -}}
+                            <div class="col-12 col-lg-3 text-lg-right ml-auto
+                            {{- partial "helpers/text-color.html" (dict "self" $self "light" "white") -}}
+                            ">
+                                {{- partial "helpers/range.html" (dict "self" $self "startDate" .startDate "endDate" .endDate) -}}
+                            </div>
+                        {{- end -}}
+                    </div>
+                {{- end -}}
+                {{- with .location -}}
+                    <div class="row">
+                        <div class="col-12 col-lg-3 ml-auto text-lg-right align-self-right
+                        {{- partial "helpers/text-color.html" (dict "self" $self "light" "secondary") -}}
+                        ">
+                            <span class="location badge font-italic font-weight-normal">
+                                {{- partial "helpers/location.html" (dict "self" $self "lat" .lat "long" .long) -}}
+                            </span>
+                        </div>
+                    </div>
+                {{- end -}}
+                {{- partial "fragments/resumic/highlights.html" (dict "self" $self "highlights" .highlights) -}}
+                {{- partial "fragments/resumic/courses.html" (dict "self" $self "courses" .courses) -}}
+                {{- partial "fragments/resumic/summary.html" (dict "self" $self "summary" .summary) -}}
+            {{- end -}}
+        {{- end -}}
+        {{- /*<!-- Primary grouped items -->*/ -}}
+        {{- /*<!-- Duplicate code from Secondary! -->*/ -}}
+        {{- if and $primary $self.Params.education.group_primary -}}
+            <div class="row pt-3">
+                <div class="col-12 col-lg-10 text-lg-left
+                {{- partial "helpers/text-color.html" (dict "self" $self "light" "white") -}}
+                ">
+                    <h3 class="studyStage">
+                        {{- i18n "resumic.primary" -}}
+                    </h3>
+                </div>
+            </div>
+            {{- range $primary -}}
+                <hr class="my-1">
+                {{- if or .degree .area .entity.name .startDate .endDate -}}
+                    <div class="row justify-content-between">
+                        {{- if or .degree .area .entity.name -}}
+                            <div class="col-12 col-lg-9 text-lg-left
+                            {{- partial "helpers/text-color.html" (dict "self" $self "light" "secondary") -}}
+                            ">
+                                {{- if .degree -}}
+                                    <span class="degree font-weight-bold">
+                                    {{- .degree -}}
+                                    </span>
+                                {{- end -}}
+                                {{- if .area -}}
+                                    <span class="area d-block d-lg-inline font-weight-bold">
+                                        {{ if .degree }}
+                                            {{- printf " %s " (i18n "resumic.in") -}}
+                                        {{ end }}
+                                        {{- .area -}}
+                                    </span>
+                                {{- end -}}
+                                {{- if .entity.name -}}
+                                    <span class="name d-block d-lg-inline font-italic">
+                                        {{- if .degree -}}
+                                            {{- printf " %s " (i18n "resumic.at") -}}
+                                        {{- end -}}
+                                        {{- .entity.name -}}
+                                        {{- if .entity.url -}}
+                                            <a class="url text-decoration-none" style="font-size: 0.6rem;line-height:1.5rem;" href="{{- .entity.url -}}">
+                                                <i class="fas fa-external-link-alt" style="vertical-align:top;"></i>
+                                            </a>
+                                        {{- end -}}
+                                    </span>
+                                    {{- if .entity.description -}}
+                                        <span class="d-none d-lg-inline">{{ printf " ‒ " }}</span>
+                                        <span class="description d-block d-lg-inline font-italic">{{- .entity.description -}}</span>
+                                    {{- end -}}
+                                {{- end -}}
+                                {{- range .honors -}}
+                                    <div class="honors d-block d-lg-inline">
+                                        <span class="badge badge-pill badge-primary align-top" style="font-size:0.7rem">
+                                            {{- . -}}
+                                        </span>
+                                    </div>
+                                {{- end -}}
+                            </div>
+                        {{- end -}}
+                        {{- if or .startDate .endDate -}}
+                            <div class="col-12 col-lg-3 text-lg-right ml-auto
+                            {{- partial "helpers/text-color.html" (dict "self" $self "light" "white") -}}
+                            ">
+                                {{- partial "helpers/range.html" (dict "self" $self "startDate" .startDate "endDate" .endDate) -}}
+                            </div>
+                        {{- end -}}
+                    </div>
+                {{- end -}}
+                {{- with .location -}}
+                    <div class="row">
+                        <div class="col-12 col-lg-3 ml-auto text-lg-right align-self-right
+                        {{- partial "helpers/text-color.html" (dict "self" $self "light" "secondary") -}}
+                        ">
+                            <span class="location badge font-italic font-weight-normal">
+                                {{- partial "helpers/location.html" (dict "self" $self "lat" .lat "long" .long) -}}
+                            </span>
+                        </div>
+                    </div>
+                {{- end -}}
+                {{- partial "fragments/resumic/highlights.html" (dict "self" $self "highlights" .highlights) -}}
+                {{- partial "fragments/resumic/courses.html" (dict "self" $self "courses" .courses) -}}
+                {{- partial "fragments/resumic/summary.html" (dict "self" $self "summary" .summary) -}}
+            {{- end -}}
+        {{- end -}}
+    </div>
+    {{- partial "fragments/resumic/summary.html" (dict "self" $self "summary" $resume.education.summary "enclose" true) -}}
+</div>

@@ -1,0 +1,88 @@
+{{- $self := .self -}}
+{{- $bg := .bg -}}
+{{- $resume := .resume -}}
+
+{{- $details := "full" -}}
+{{- with $self.Params.general.details -}}
+    {{- $details = . -}}
+{{- end -}}
+
+{{- /*<!-- When sorting, group into present and previous and sort each by startDate -->*/ -}}
+{{- $volunteer := slice -}}
+{{- $volunteer_present := slice -}}
+{{- $volunteer_previous := slice -}}
+{{- if $self.Params.general.sort -}}
+    {{- range .resume.volunteer.volunteer -}}
+        {{- if eq .endDate nil -}}
+            {{- $volunteer_present = $volunteer_present | append . -}}
+        {{- else -}}
+            {{- $volunteer_previous = $volunteer_previous | append . -}}
+        {{- end -}}
+    {{- end -}}
+
+    {{- $volunteer = slice -}}
+    {{- range sort $volunteer_present "startDate" "desc" -}}
+        {{- $volunteer = $volunteer | append . -}}
+    {{- end -}}
+
+    {{- range sort $volunteer_previous "startDate" "desc" -}}
+        {{- $volunteer = $volunteer | append . -}}
+    {{- end -}}
+{{- else -}}
+    {{- range .resume.volunteer.volunteer -}}
+        {{- $volunteer = $volunteer | append . -}}
+    {{- end -}}
+{{- end -}}
+
+<div class="volunteer-content py-3">
+    {{- partial "fragments/resumic/heading.html" (dict "self" $self "bg" $bg "section" "volunteer" "icon" "fa-hands-helping") -}}
+    <div class="volunteer-content px-4 text-center
+    {{- partial "helpers/text-color.html" (dict "self" $self) -}}
+    ">
+        {{- range $volunteer -}}
+            <div class="row pt-4">
+                <div class="col-12 col-lg-10 text-lg-left
+                {{- partial "helpers/text-color.html" (dict "self" $self "light" "white") -}}
+                ">
+                    <div class="upper-row">
+                        <h3 class="roles">
+                            {{- if .roles -}}
+                                {{- range first 1 .roles -}}
+                                    {{- . -}}
+                                {{- end -}}
+                                {{- range last (sub (len .roles) 1) .roles -}}
+                                    {{- printf ", %s" . -}}
+                                {{- end -}}
+                            {{- end -}}
+                        </h3>
+                    </div>
+                </div>
+                {{- if or .startDate .endDate -}}
+                    <div class="col-12 col-lg-2 text-lg-right
+                    {{- partial "helpers/text-color.html" (dict "self" $self "light" "white") -}}
+                    ">
+                    {{- partial "helpers/range.html" (dict "self" $self "startDate" .startDate "endDate" .endDate) -}}
+                    </div>
+                {{- end -}}
+            </div>
+            {{- if or .entity .location -}}
+                <div class="row">
+                    {{- partial "fragments/resumic/entity.html" (dict "self" $self "entity" .entity) -}}
+                    {{- with .location -}}
+                        <div class="col-12 col-lg-3 ml-auto text-lg-right align-self-right
+                        {{- partial "helpers/text-color.html" (dict "self" $self "light" "secondary") -}}
+                        ">
+                            <span class="location font-italic" style="font-size: 0.8rem;">
+                                {{- partial "helpers/location.html" (dict "self" $self "lat" .lat "long" .long) -}}
+                            </span>
+                        </div>
+                    {{- end -}}
+                </div>
+            {{- end -}}
+            {{- partial "fragments/resumic/resources.html" (dict "self" $self "resources" .resources) -}}
+            {{- partial "fragments/resumic/highlights.html" (dict "self" $self "highlights" .highlights) -}}
+            {{- partial "fragments/resumic/summary.html" (dict "self" $self "summary" .summary) -}}
+        {{- end -}}
+    </div>
+    {{- partial "fragments/resumic/summary.html" (dict "self" $self "summary" $resume.volunteer.summary "enclose" true) -}}
+</div>

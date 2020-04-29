@@ -1,0 +1,57 @@
+{{- $self := .self -}}
+{{- $bg := .bg -}}
+{{- $resume := .resume -}}
+
+{{ $date_format := "2006-01" }}
+{{ with .date_format }}
+    {{ $date_format = .date_format }}
+{{ end }}
+
+<hr>
+<div class="meta-content py-3">
+    {{- if or ($self.Params.general.attribution | default true) $resume.meta.version }}
+        <div class="row mx-0 text-center
+        {{- partial "helpers/text-color.html" (dict "self" $self "light" "white" "dark" "black-50") -}}
+        ">
+            {{- if or $resume.meta.version $resume.meta.lastModified -}}
+                <div class="col-12 col-lg-4 text-lg-left">
+                    <span>
+                        {{- with $resume.meta.version -}}
+                            {{- i18n "resumic.version" -}}
+                            {{- printf " %s " . -}}
+                        {{- end -}}
+                    </span>
+                    <span class="d-block d-lg-inline">
+                        {{- with $resume.meta.lastModified -}}
+                            {{- if not $resume.meta.version -}}
+                                {{- humanize (i18n "resumic.lastModified") -}}
+                            {{- else -}}
+                                {{- i18n "resumic.lastModified" -}}
+                            {{- end -}}
+                            {{- printf " %s" (. | dateFormat $date_format) -}}
+                        {{- end -}}
+                    </span>
+                </div>
+            {{- end -}}
+            {{- if ($self.Params.general.attribution | default true) }}
+                <div class="col-12 col-lg-4 mx-auto">
+                    {{- i18n "resumic.attribution" -}}
+                    {{- printf " " -}}
+                    <a href="https://resumic.org">
+                        {{- printf "Resumic" -}}
+                    </a>
+                    {{- printf " + " -}}
+                    <a href="https://syna.okkur.org">
+                        {{- printf "Syna" -}}
+                    </a>
+                </div>
+            {{- end -}}
+            {{- with $resume.meta.schemaVersion }}
+                <div class="col-12 col-lg-4 text-lg-right ml-lg-auto">
+                    {{- i18n "resumic.schemaVersion" -}}
+                    {{- printf " %s" . -}}
+                </div>
+            {{- end -}}
+        </div>
+    {{- end -}}
+</div>

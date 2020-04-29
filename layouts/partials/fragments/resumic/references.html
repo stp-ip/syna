@@ -1,0 +1,45 @@
+{{- $self := .self -}}
+{{- $bg := .bg -}}
+{{- $resume := .resume -}}
+
+{{- $details := "full" -}}
+{{- with $self.Params.general.details -}}
+    {{- $details = . -}}
+{{- end -}}
+
+<div class="references-content py-3">
+    {{- partial "fragments/resumic/heading.html" (dict "self" $self "bg" $bg "section" "references" "icon" "fa-comment-dots") -}}
+    <div class="references-content px-4 text-center text-lg-left
+    {{- partial "helpers/text-color.html" (dict "self" $self) -}}
+    ">
+        {{- range $resume.references.references -}}
+            <div class="row pt-2">
+                <div class="col-12 col-lg-3 p-0">
+                    {{- if .name -}}
+                        <div class="name col-12 font-weight-bold">
+                                {{- .name -}}
+                        </div>
+                    {{- end -}}
+                    {{- if .position -}}
+                        <div class="position col-12 font-italic">
+                            {{- .position -}}
+                        </div>
+                    {{- end -}}
+                    {{- if .entity -}}
+                        <div class="entity col-12">
+                            {{- .entity.name -}}
+                        </div>
+                    {{- end -}}
+                </div>
+                <div class="col-12 col-lg-9 text-justify">
+                    <div class="reference alert alert-secondary">
+                        {{- with .reference -}}
+                            {{- . -}}
+                        {{- end -}}
+                    </div>
+                </div>
+            </div>
+        {{- end -}}
+    </div>
+    {{- partial "fragments/resumic/summary.html" (dict "self" $self "summary" $resume.references.summary "enclose" true) -}}
+</div>

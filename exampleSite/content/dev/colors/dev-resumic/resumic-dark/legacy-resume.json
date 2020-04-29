@@ -1,0 +1,590 @@
+{
+    "basics": {
+      "name": "Simon Arnell",
+      "summary": "Experienced Chief Technologist with a demonstrated history of working in the information technology and security industries. Strong information security professional skilled in Security Architecture, Risk Management, Strategic Policy Decision Support and Research and Development (R&D).",
+      "location": {
+        "city": "Fleet",
+        "countryCode": "UK",
+        "region": "Hampshire"
+      },
+      "profiles": [{
+          "network": "Twitter",
+          "username": "simonarnell",
+          "url": "https://twitter.com/simonarnell"
+        },
+        {
+          "network": "LinkedIn",
+          "username": "simonarnell",
+          "url": "https://www.linkedin.com/in/simonarnell"
+        },
+        {
+          "network": "Facebook",
+          "username": "simon.arnell",
+          "url": "https://www.facebook.com/simon.arnell"
+        },
+        {
+          "network": "GitHub",
+          "username": "simonarnell",
+          "url": "https://www.github.com/simonarnell"
+        },
+        {
+          "network": "Crunchbase",
+          "username": "simon-arnell",
+          "url": "https://www.crunchbase.com/person/simon-arnell"
+        }
+      ]
+    },
+    "work": [{
+        "company": "Configured Things",
+        "position": "Founder and Non-Executive Director",
+        "website": "https://configuredthings.com",
+        "startDate": "2018-01-16",
+        "endDate": "",
+        "summary": "I am a co-founder and non-executive director at Configured Things, a member of the 2018 GCHQ/NCSC Cyber Accelerator",
+        "highlights": []
+      },
+      {
+        "company": "DXC Technology",
+        "position": "Chief Technologist",
+        "website": "https://dxc.technology",
+        "startDate": "2017-04-01",
+        "endDate": "",
+        "summary": "Following HPE Enterprise Services' 2017 spin-merge with CSC, my employer changed once again, it  became DXC Technology. I was initially responsible for mapping the various partnering relationships the legacy organisations maintained and understanding what was necessary for the new organisation. In this capacity I owned the New Technology Overview program, a horizon scanning service that reflected the shifting needs of the market and proposed partnerships that would allow DXC to capitalise on these changes, whilst match-making potential partners with salespeople with particular requirements.
+  
+        I have authored many papers and spoken at a number of conferences at DXC to build out our market presence and I am responsible for our annual cyber security predictions report, a risk management level perspective with suggested mitigations for how to safely navigate one's business through a changing threat landscape.
+  
+        In this role I am a frequent lecturer on the UK Ministry of Defence's Cyber Operations Awareness (Core) Course (COACC) taught at the Defence Academy in Shrivenham",
+        "highlights": []
+      },
+      {
+        "company": "Hewlett Packard Enterprise",
+        "position": "Chief Technologist",
+        "website": "https://www.hpe.com",
+        "startDate": "2015-11-01",
+        "summary": "Due to the HP Inc. and Hewlett-Packard Enterprise split, my employer changed, however I continued to commercialise the DNS Analytics intellectual property. I ran two customer proofs of concept to test the solution in the real-world. I selected a Nordic telecoms equipment manufacturer and a Nordic nuclear power operator to pilot the technology and architect the solution around. This proved to be a great success as a detective control and was publicly unveiled at HP Protect '15.
+  
+        Having introduced a means of detection that could dramatically shift the mean time to detect an incident with the DNS analytics technology, I began to appreciate this was moot, as the response times were still dire, customers did not have the means to orchestrate and reconfigure their estates dynamically in response to a security incident. This is where my work on Software Defined Networking for Security and Network Security Function Virtualization began. I co-developed IP to rapidly respond to incidents with investigative and preventative measures from the network using OpenFlow, this was successfully prototyped on the HP Labs network to react to anomalous activity",
+        "highlights": [],
+        "endDate": "2017-04-01"
+      },
+      {
+        "company": "HP",
+        "position": "Chief Technologist",
+        "website": "https://www.hp.com",
+        "startDate": "2014-08-01",
+        "summary": "I was responsible for presenting the company's strategy and services to customers who visited our London and Bristol Customer Engagement Centres.
+  
+        I began to sponsor the commercialisation of a research project that was monitoring HP's internal network for anomalous Domain Name System (DNS) traffic, identifying misconfigured and compromised devices. I expanded the monitoring from the internal network onto HP's public cloud allowing it to rapidly detect compromised tenants, personally porting the architecutre from the original one gigabit per second based design and scaling to the ten gigabit per second requirement of our public cloud, requiring me to rewrite the C++ Field Programmable Gate Array-based software to cope with the dramatic hardware changes necessary to monitor a public cloud",
+        "highlights": [],
+        "endDate": "2015-11-01"
+      },
+      {
+        "company": "HP",
+        "position": "Security Analytics Lead",
+        "website": "https://www.hp.com",
+        "startDate": "2010-11-01",
+        "summary": "Having developed intellectual property during my time in HP Labs, I transfered myself and the technology into the security business unit to understand how it could be applied to the business. Using corporate R&D funding I sponsored a project with our Brazil team to scale and build a management framework around the modelling tooling, this allowed our Managed Security Service to perform proofs of concept of collecting data from the customer estates and providing them with a proactive and benchmarked risk assessment with respect to their Identity and Access Management and Vulnerability and Threat Management processes.
+  
+        This role also allowed me to act as a conduit to identify and transfer technology developed in our corprorate research labs into the security business.
+  
+        I also architected and piloted HP's Cloud Risk and Controls Assessment, a set of tools built around the Cloud Security Alliance's Cloud Control Matrix and an internal risk assesment to provide customers with an impact analysis of their planned cloud migrations",
+        "highlights": [],
+        "endDate": "2014-08-01"
+      },
+      {
+        "company": "National Grid",
+        "position": "Information Security Researcher",
+        "website": "https://www.nationalgrid.com",
+        "startDate": "2010-01-01",
+        "summary": "I was seconded to National Grid to understand the threats in the Operational Technology environments, exploring the potential mitigations of virtual machines on trusted platforms to improve overall systems security with respect to security and staff productivity, in addition the impact of password policies was assesed and reported on. I was based at the National Electricity Control site and performed extensive field work with University College London consisting of staff interviews at the National Gas Control site, UK Headquarters and US Headquarters.",
+        "highlights": [],
+        "endDate": "2010-10-01"
+      },
+      {
+        "company": "Bank of America Merrill Lynch",
+        "position": "Technology Risk Management Research Officer",
+        "website": "https://www.bofaml.com",
+        "startDate": "2008-11-01",
+        "summary": "I was seconded to Merrill Lynch to research the applicability and potential impact of Digital Rights Mangagment to the bank's security, costs and productivity. As part of this project I also facilitated and conducted interviews with the bank's staff and University College London to understand the socio-technical issues of the science of security.
+  
+        Beyond the Trust Economics project, I also assisted the bank with governence, risk and compliance exercises such as performing a policy gap anaylsis during its merger of Merrill Lynch with Bank of America, developing a Secure Development Lifecycle and consulting the line of business' technical teams to assist with security concerns.",
+        "highlights": [],
+        "endDate": "2009-12-01"
+      },
+      {
+        "company": "Hewlett-Packard Laboratories",
+        "position": "Researcher",
+        "website": "http://www.hpl.hp.com",
+        "startDate": "2008-11-01",
+        "summary": "I worked in the Systems Security Lab in HP Labs Bristol as a post-doc researcher. As part of the UK government-funded Trust Economics project, the role saw me seconded to Bank of America Merrill Lynch and National Grid, developing discrete event simulations of stochastic systems' security models to statistically analyse the impact of threats, people, process and technology on an organistion's security to improve strategic decision-making",
+        "highlights": [],
+        "endDate": "2010-10-01"
+      },
+      {
+        "company": "Yospace, a Bauer company",
+        "position": "Quality Assurance Engineer",
+        "website": "http://www.yospace.com",
+        "startDate": "2007-05-01",
+        "summary": "A summer internship at a user-generated content startup as a Quality Assurance Engineer that became a part-time role during my post-graduate studies. I was the sole quality assurance resource, responsible for ensuring quality of the user-generated content platform prodvided to major operators such as Three, O2, Vodafone. Yospace adopted agile methods and so I would attend the daily scrum meetings to understand project direction and escalate bugs. To improve effiency I implmented Bugzilla for issue tracking and CruiseControl for continuous integration. I devised an application of AI classifier to reduce the cost to the business of moderating users' comments on other users' content",
+        "highlights": [],
+        "endDate": "2008-10-01"
+      },
+      {
+        "company": "Collingwood College",
+        "position": "IT Support Technician",
+        "website": "https://www.collingwoodcollege.com",
+        "startDate": "2004-05-01",
+        "summary": "A part-time role during my undergraduate studies. I supported a small campus network of approximately one thousand endpoints and two and a half thousand users. Due to a new college building being built a data centre migration was performed alongside transitions of Windows Server and Exchange 2000 to 2003. I was responsible for architecting and buildout of the desktop OS deployment solution, architecting a proposed 802.11g Wi-Fi deployment using 802.1x authentication of endpoints, and a Windows Active Directory consolidation project to support and manage the local feeder schools' IT.",
+        "highlights": [],
+        "endDate": "2006-09-01"
+      }
+    ],
+    "education": [{
+        "institution": "Royal Holloway, University of London",
+        "area": "Information Security",
+        "studyType": "MSc",
+        "startDate": "2007-01-01",
+        "endDate": "2008-01-01",
+        "courses": [
+          "Security Management", "Introduction to Cryptography and Security Mechanisms",
+          "Network Security", "Computer Security (Operating Systems)", "Advanced Cryptography",
+          "Smart Cards/Tokens Security and Applications", "Software Security", "Trusted Computing"
+        ]
+      },
+      {
+        "institution": "Royal Holloway, University of London",
+        "area": "Computer Science",
+        "studyType": "BSc",
+        "startDate": "2004-01-01",
+        "endDate": "2007-01-01",
+        "courses": ["Logical Foundation for Computer Science and Artificial Intelligence",
+          "Introduction to Programming and Professional Issues", "Computer Engineering",
+          "Web and Internet Technologies", "Theory of Computer Languages and Infinite Structures",
+          "C++ for Java Programmers", "Graphics and Human Computer Interface",
+          "Algorithms and Complexity", "Bioinformatics", "Operating Systems",
+          "Compilers and Code Generation", "Advanced Data Communications",
+          "Information Security", "Computational Finance", "Software Engineering Group Project",
+          "Database Theory", "Object Orientated Software Engineering"
+        ]
+      }
+    ],
+    "publications": [{
+        "name": "Secure Digital Transformation - Principles for Enterprise Defense",
+        "publisher": "DXC Technology",
+        "releaseDate": "2019-05-28",
+        "website": "https://assets1.dxc.technology/security/downloads/DXC-Secure_Digital_Transformation_Principles_for_Enterprise_Defense_paper.pdf",
+        "summary": "This white paper provides a set of succinct and simplified high- level architectural principles designed for executive consumption. Applying these principles will allow executives to build digital resilience into the fabric of their enterprise, ensuring they can gain all of the advantages of the digital age while minimizing associated risks.",
+        "coauthors": [{
+            "name": "Craig Jarvis",
+            "url": "https://www.linkedin.com/in/craig-jarvis-283013126/",
+            "label": "LinkedIn"
+          },
+          {
+            "name": "Mark Evans",
+            "url": "https://www.linkedin.com/in/mark-evans-b1b69b143/",
+            "label": "LinkedIn"
+          }
+        ]
+      },
+      {
+        "name": "Rethink risk and enterprise security in a digital world",
+        "publisher": "DXC Technology",
+        "releaseDate": "2019-01-01",
+        "website": "http://assets1.dxc.technology/digital_transformation/downloads/DXCDigitalDirections_Security.pdf",
+        "summary": "Digital transformation promises to deliver new business value but also introduces new security risks that demand equally new and innovative responses. Organizations on a digital transformation journey must make a parallel trip, one that integrates security and risk management into DevOps and Continuous Delivery (CD) processes.",
+        "coauthors": [{
+            "name": "Craig Jarvis",
+            "url": "https://www.linkedin.com/in/craig-jarvis-283013126/",
+            "label": "LinkedIn"
+          },
+          {
+            "name": "TM Ching",
+            "url": "https://au.linkedin.com/in/timmengching",
+            "label": "LinkedIn"
+          }
+        ]
+      },
+      {
+        "name": "Top 10 security trends for 2019",
+        "publisher": "DXC Technology",
+        "releaseDate": "2018-12-01",
+        "website": "https://assets1.dxc.technology/security/downloads/DXC-Top_10_security_trends_for_2019_report.pdf",
+        "summary": "A report authored with the help of colleagues at DXC, discussing what security risks and technology changes may feature in the year ahead and how to manage their impact to the enterprise.",
+        "coauthors": [{
+            "name": "Craig Jarvis",
+            "url": "https://www.linkedin.com/in/craig-jarvis-283013126/",
+            "label": "LinkedIn"
+          }
+        ]
+      },
+      {
+        "name": "How to overcome the security questions facing blockchain technology",
+        "publisher": "DXC Technology",
+        "releaseDate": "2018-04-01",
+        "website": "https://assets1.dxc.technology/security/downloads/DXC-Security-How_to_overcome_the_security_questions_facing_blockchain_technology.pdf",
+        "summary": "Overcoming security questions about blockchain ecosystems will help ensure that blockchain continues to evolve in the financial services industry and matures into a disruptor in other businesses. This paper identifies security implications and potential threats, and offers 10 recommendations for embedding security into blockchain transactions.",
+        "coauthors": [{
+            "name": "Richard Archdeacon",
+            "url": "https://www.linkedin.com/in/richardarchdeacon/",
+            "label": "LinkedIn"
+          },
+          {
+              "name": "Faisal Siddiqi",
+              "url": "https://www.linkedin.com/in/fsiddiqi/",
+              "label": "LinkedIn"
+          },
+          {
+              "name": "Björn Obermeier",
+              "url": "https://www.linkedin.com/in/bobermeier/",
+              "label": "LinkedIn"
+          }
+        ]
+      },
+      {
+        "name": "10 steps to securing the internet of things",
+        "publisher": "DXC Technology",
+        "releaseDate": "2018-04-01",
+        "website": "http://assets1.dxc.technology/security/downloads/DXC-Security-10_steps_to_securing_the_internet_of_things.pdf",
+        "summary": "Support IoT and digital change with cyber resilience across the enterprise.",
+        "coauthors": [{
+            "name": "Luciano Manfredi",
+            "url": "https://www.linkedin.com/in/luciano-manfredi-334479/",
+            "label": "LinkedIn"
+          },
+          {
+              "name": "Lukas Hatala",
+              "url": "https://www.linkedin.com/in/lukas-hatala-7ab23355/",
+              "label": "LinkedIn"
+          },
+          {
+              "name": "Rhodri Davies",
+              "url": "https://www.linkedin.com/in/rhoddavies/",
+              "label": "LinkedIn"
+          },
+          {
+              "name": "Jeremy Ward",
+              "url": "https://www.linkedin.com/in/drjeremyward/",
+              "label": "LinkedIn"
+          }
+        ]
+      },
+      {
+        "name": "Take a risk-based approach to DevSecOps",
+        "publisher": "DXC Technology",
+        "releaseDate": "2018-03-01",
+        "website": "http://assets1.dxc.technology/security/downloads/DXC-Take_a_risk-based_approach_to_DevSecOps_paper.pdf",
+        "summary": "Companies embracing digital transformation are looking to DevOps and agile development methods to accelerate the release of new applications. Unfortunately, in this need for speed, security is often left behind. This paper introduces process and language bridges to address the gulf between risk management, development and system operations teams.",
+        "coauthors": [{
+          "name": "John Diamant",
+          "url": "https://www.linkedin.com/in/johndiamant/",
+          "label": "LinkedIn"
+        }]
+      },
+      {
+        "name": "Cyber Security Predictions for 2018",
+        "publisher": "DXC Technology",
+        "releaseDate": "2018-01-01",
+        "website": "http://assets1.dxc.technology/security/downloads/DXC-10_Cyber_Security_Predictions_for_2018.pdf",
+        "summary": "A report authored with the help of colleagues at DXC, discussing what security risks and technology changes may feature in the year ahead and how to manage their impact to the enterprise."
+      },
+      {
+        "name": "SDN4S: Software Defined Networking for Security",
+        "publisher": "Hewlett Packard Labs",
+        "releaseDate": "2017-01-23",
+        "website": "https://www.labs.hpe.com/publications/HPE-2017-07",
+        "summary": "Security Operations Centers (SOCs) rely on analysts to perform largely manual processes to carry out the various stages of the incident management lifecycle. These processes are time-intensive and typically require much context switching and hand-off between monitoring and operations analysts, introducing considerable delays into the resolution of incidents. With enterprise networks facing malware threats of increasing complexity and volume, this approach becomes unsustainable. It is crucial, therefore, to develop solutions that dependably automate and accelerate incident management tasks and only involve the limited pool of highly-trained and experienced analysts an organization can have at its disposal when truly necessary, where it matters. In this report we introduce SDN4S: a system and solution to minimize the time between incident detection and resolution by using automated countermeasures based on Software-Defined Networking (SDN). SDN4S creates incident-specific response workflows orchestrating actions and network-based countermeasures automatically upon receiving an alert, leading to faster and more predictable incident response. We describe the architecture and implementation of SDN4S, and report on the test deployment of the system on our research network."
+      },
+      {
+        "name": "Protecting the Enterprise using Network Function Virtualisation-based Security Analytics and Remediation",
+        "publisher": "Hewlett Packard Labs",
+        "releaseDate": "2017-01-23",
+        "website": "https://www.labs.hpe.com/publications/HPE-2017-06",
+        "summary": "The threat landscape is constantly evolving, creating new challenges for organizations and the need for continuous investments in security controls and incident management capabilities. A key problem organisations face is how to reduce the incident remediation time, once security issues have been detected, in order to minimize risks, disruption and losses. Central to this challenge is the heavy reliance on proprietary hardware for advanced detection and remediation, which results in high upfront capital expenditure and long lead times in an area where rapid response is critical. We present our vision and technical approach to address this issue, consisting of a Network Function Virtualisation (NFV)-based Security Analytics and Remediation solution, motivated from real-world experiences gathered while working with a large enterprise customer."
+      },
+      {
+        "name": "Awareness is only the first step - A framework for progressive engagement of staff in cyber security",
+        "publisher": "Hewlett Packard Enterprise, University College London (RISCS) and CESG",
+        "releaseDate": "2015-12-16",
+        "website": "http://www.riscs.org.uk/wp-content/uploads/2015/12/Awareness-is-Only-the-First-Step.pdf",
+        "summary": "The business white paper “Awareness is only the first step: A framework for progressive engagement of staff in cyber security” is the product of collaboration between RISCS researchers and security awareness experts at Hewlett Packard Enterprise (HPE), with oversight by the UK government’s National Technical Authority for Information Assurance (CESG).  Security communication, education, and training (CET) is meant to align employee behavior with the security goals of the organization, but it is not always designed in a way that can achieve this. The purpose of this paper is to set out a framework for security awareness that employees will actually engage with, and empower them to become the strongest link—rather than a vulnerability—in defending the organization.  A set of steps, required to deliver effective security CET as a natural part of an organization’s engagement with employees at all levels, is outlined. Depending on different needs, many vehicles are available from security games, quizzes, and brainteasers—and possibly prizes—to encourage employees to test their knowledge and explore in a playful manner. The most important output is that different approaches are needed for routine security tasks, and those tasks require application of existing security skills to new situations. There are many creative ways to improve security behaviors and culture, but it is essential to engage people in the right way. Then they can convert learning into tangible action and new behavior. Security CET needs to be properly resourced and regularly reviewed and updated to achieve lasting behavior change."
+      },
+      {
+        "name": "Cyber Security Predictions - 2016",
+        "publisher": "Hewlett Packard Enterprise",
+        "releaseDate": "2015-10-01",
+        "website": "https://www.hpe.com/h20195/v2/GetPDF.aspx/4AA6-0910EEW.pdf",
+        "summary": ""
+      },
+      {
+        "name": "The role and importance of trust: A study of the conditions that generate and undermine sensitive information sharing",
+        "publisher": "Palgrave Macmillan",
+        "releaseDate": "2015-05-18",
+        "website": "http://www.palgrave-journals.com/sj/journal/vaop/ncurrent/full/sj201513a.htm",
+        "summary": ""
+      },
+      {
+        "name": "Learning from “Shadow Security:” Why Understanding Non-Compliant Behaviors Provides the Basis for Effective Security",
+        "publisher": "Internet Society Useable Security (USEC)",
+        "releaseDate": "2014-02-23",
+        "website": "http://dx.doi.org/10.14722/usec.2014.23007",
+        "summary": ""
+      },
+      {
+        "name": "Protecting data and enabling the mobile enterprise",
+        "publisher": "HP",
+        "releaseDate": "2012-01-01",
+        "website": "http://h20195.www2.hp.com/v2/getpdf.aspx/4aa4-0919eew.pdf",
+        "summary": ""
+      },
+      {
+        "name": "Security Analytics: Risk Analysis for an Organisation's Incident Management Process",
+        "publisher": "HP Labs",
+        "releaseDate": "2012-01-01",
+        "website": "http://www.hpl.hp.com/techreports/2012/HPL-2012-206.pdf",
+        "summary": ""
+      },
+      {
+        "name": "Systematic Decision Making in Security Management Modelling Password Usage and Support",
+        "publisher": "HP Labs",
+        "releaseDate": "2012-01-01",
+        "website": "http://www.hpl.hp.com/techreports/2011/HPL-2011-36.pdf",
+        "summary": "Presented at the International Workshop on Quantitative Aspects in Security Assurance (QASA) 2012"
+      },
+      {
+        "name": "A Stealth Approach to Usable Security: Helping IT Security Managers to Identify Workable Security Solutions",
+        "publisher": "Newcastle University",
+        "releaseDate": "2010-07-01",
+        "website": "http://www.cs.ncl.ac.uk/publications/trs/papers/1209.pdf",
+        "summary": ""
+      },
+      {
+        "name": "The True Cost of Unusable Password Policies: Password Use in the Wild",
+        "publisher": "ACM SIGCHI",
+        "releaseDate": "2010-01-01",
+        "website": "http://dl.acm.org/citation.cfm?id=1753384",
+        "summary": ""
+      }
+    ],
+    "languages": [{
+        "language": "English",
+        "fluency": "Native or bilingual proficiency"
+      },
+      {
+        "language": "Finnish",
+        "fluency": "Elementary proficiency"
+      }
+    ],
+    "legal": [{
+        "name": "DETERMINING A PERSISTENT NETWORK IDENTITY OF A NETWORKED DEVICE",
+        "reference": "PCT/US2016/028563",
+        "description": "The present disclosure relates to a network device that determines a persistent network identity for a networked device. Specifically, the network device receives a service request that includes an identifier for a second network device in a sub-network among a plurality of sub-networks. The identifier uniquely corresponds to the second network device during a limited period of time. At least one sub-networks are unreachable by the service request. The network device aggregates partial networked device profiles corresponding to the second network device received from other network devices in at least the at least one sub-networks to generate a networked device profile. Moreover, the network device searches at least one caches to obtain the networked device profile based on the identifier in the service request, and correlates the identifier to a persistent network identity corresponding to the second network device based on the networked device profile.",
+        "source": {
+          "url": "https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2017184139"
+        },
+        "type": "Patent",
+        "coinventors": [{
+            "name": "Marco Casassa Mont",
+            "url": "https://www.linkedin.com/in/marcocasassamont",
+            "label": "LinkedIn"
+          },
+          {
+            "name": "Yolanta Beresna",
+            "url": "https://www.linkedin.com/in/yolanta-beresna-6166502",
+            "label": "LinkedIn"
+          },
+          {
+            "name": "Nipun Balan Thekkummal",
+            "url": "https://www.linkedin.com/in/nipunbalan",
+            "label": "LinkedIn"
+          }
+        ],
+        "assignee": {
+          "name": "Hewlett-Packard Enterprise Development Company",
+          "url": "https://www.hpe.com/"
+        },
+        "applicationDate": "2016-04-21"
+      },
+      {
+        "name": "COLLECTING DOMAIN NAME SYSTEM TRAFFIC",
+        "reference": "PCT/US2015/047691",
+        "description": "Examples relate to collecting domain name system traffic. In one example, a computing device may: receive, from a first intermediary network device, a DNS query packet that was sent by a client computing device operating on a private network, the DNS query packet specifying i) a query domain name, and ii) a source address that specifies the client computing device; store, in a data storage device, a query record specifying the query domain name and the source address specified by the DNS query packet; receive, from a second intermediary network device, a DNS response packet; determine that the DNS response packet specifies a response domain name that matches the query domain name; in response to the determination, extract, from the DNS response packet, a resolved address that corresponds to the response domain name; and store, in the query record, the resolved address specified by the DNS response packet.",
+        "source": {
+          "url": "https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2017039602"
+        },
+        "type": "Patent",
+        "coinventors": [{
+            "name": "Marco Casassa Mont",
+            "url": "https://www.linkedin.com/in/marcocasassamont",
+            "label": "LinkedIn"
+          },
+          {
+            "name": "Yolanta Beresna",
+            "url": "https://www.linkedin.com/in/yolanta-beresna-6166502",
+            "label": "LinkedIn"
+          }
+        ],
+        "assignee": {
+          "name": "Hewlett-Packard Development Company",
+          "url": "https://www.hp.com/"
+        },
+        "applicationDate": "2015-08-31"
+      },
+      {
+        "name": "HANDLING NETWORK THREATS",
+        "reference": "PCT/US2015/061031",
+        "description": "Examples relate to handling network threats. In one example, a computing device may: receive, from a threat detector, threat data associated with a particular network device included in a plurality of network devices; identify, based on the threat data, a particular analytics operation for assisting with remediation of a threat associated with the threat data; identify, based on the threat data, additional data for performing the particular analytics operation; cause reconfiguration of at least one of the plurality of network devices, the reconfiguration causing each of the reconfigured network devices to i) collect the additional data, and ii) provide the additional data to an analytics device; and receive, from the analytics device, particular analytics results of the particular analytics operation.",
+        "source": {
+          "url": "https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2017086928"
+        },
+        "type": "Patent",
+        "coinventors": [{
+            "name": "Marco Casassa Mont",
+            "url": "https://www.linkedin.com/in/marcocasassamont",
+            "label": "LinkedIn"
+          },
+          {
+            "name": "Yolanta Beresna",
+            "url": "https://www.linkedin.com/in/yolanta-beresna-6166502",
+            "label": "LinkedIn"
+          },
+          {
+            "name": "Jon Potter",
+            "url": "https://www.linkedin.com/in/jon-potter-1a35003",
+            "label": "LinkedIn"
+          },
+          {
+            "name": "Theo Koulouris",
+            "url": "https://www.linkedin.com/in/theo-koulouris",
+            "label": "LinkedIn"
+          }
+        ],
+        "assignee": {
+          "name": "Hewlett-Packard Development Company",
+          "url": "https://www.hp.com/"
+        },
+        "applicationDate": "2015-11-17"
+      },
+      {
+        "name": "NETWORK ANOMALY DETECTION",
+        "reference": "PCT/US2015/025454",
+        "description": "Examples relate to detecting network anomalies. In one example, a computing device may: receive, from each of a plurality of packet capture devices of a private network, domain name system (DNS) query packets that were sent by a particular client computing device operating on the private network, each DNS query packet specifying i) a destination DNS server, ii) a query domain name, and iii) a source address that specifies the particular client computing device; provide at least one of the DNS query packets to a DNS traffic analyzer that is trained to identify DNS anomalies based on characteristics of the DNS query packets; receive anomaly output from the DNS traffic analyzer, the anomaly output indicating a DNS anomaly that was identified for the DNS query packets; and in response to receiving the anomaly output, provide a user device with data specifying the identified DNS anomaly.",
+        "source": {
+          "url": "https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2016164050"
+        },
+        "type": "Patent",
+        "coinventors": [{
+            "name": "Marco Casassa Mont",
+            "url": "https://www.linkedin.com/in/marcocasassamont",
+            "label": "LinkedIn"
+          },
+          {
+            "name": "Ed Reynolds",
+            "url": "https://www.linkedin.com/in/ed-reynolds-98983",
+            "label": "LinkedIn"
+          },
+          {
+            "name": "Dave Graves",
+            "url": "https://www.linkedin.com/in/davidgraves3",
+            "label": "LinkedIn"
+          },
+          {
+            "name": "Niall Saunders",
+            "url": "https://www.linkedin.com/in/niallsaunders",
+            "label": "LinkedIn"
+          }
+        ],
+        "assignee": {
+          "name": "Hewlett-Packard Development Company",
+          "url": "https://www.hp.com/"
+        },
+        "applicationDate": "2015-04-10"
+      },
+      {
+        "name": "DYNAMICALLY ADJUSTING A MODEL FOR A SECURITY OPERATIONS CENTER",
+        "reference": "US 10,325,092",
+        "description": "Examples relate to dynamically adjusting a model for a security operations center (SOC). As such, the examples disclosed herein enable constructing a customer storage model over a set of time periods for a customer based on a set of resources of the SOC, a storage distribution model received from the customer related to expected usage of the set of resources, and a threat landscape for the customer. The customer storage model may be revised for a second time period based on actual storage use of the customer during a first time period, and a projection of an amount of data to be consumed in the second time period based on the threat landscape. Allocation of the resources in the SOC may be revised for the second time period based on the revision to the customer storage model.",
+        "source": {
+          "url": "https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2016076909"
+        },
+        "type": "Patent",
+        "coinventors": [{
+            "name": "Marco Casassa Mont",
+            "url": "https://www.linkedin.com/in/marcocasassamont",
+            "label": "LinkedIn"
+          },
+          {
+            "name": "Michaela Gittler",
+            "url": "https://www.linkedin.com/in/mickey-mihaela-gittler-6b350015/",
+            "label": "LinkedIn"
+          }
+        ],
+        "assignee": {
+          "name": "Hewlett Packard Enterprise Development Company",
+          "url": "https://www.hpe.com/"
+        },
+        "applicationDate": "2015-03-11",
+        "grantDate": "2019-06-18"
+      },
+      {
+        "name": "REMEDIATING A SECURITY THREAT TO A NETWORK",
+        "reference": "US 10,250,627",
+        "description": "Remediating a security threat to a network includes obtaining, from a network, security information about the network to determine traffic patterns of the network, identifying, based on the traffic patterns of the network, a security threat to the network, determining, from a playbook library and a workflow library, a workflow template and at least one software-defined networking (SDN) flow rule template to remediate the security threat, and deploying, via a SDN controller, a SDN flow rule based on the at least one SDN flow rule template in the network to remediate the security threat by altering a control path of the network.",
+        "source": {
+          "url": "https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2016018369"
+        },
+        "type": "Patent",
+        "coinventors": [{
+          "name": "Marco Casassa Mont",
+          "url": "https://www.linkedin.com/in/marcocasassamont",
+          "label": "LinkedIn"
+        }],
+        "assignee": {
+          "name": "Hewlett Packard Enterprise Development Company",
+          "url": "https://www.hpe.com/"
+        },
+        "applicationDate": "2014-07-31",
+        "grantDate": "2019-04-02"
+      },
+      {
+        "name": "CREATING A SECURITY REPORT FOR A CUSTOMER NETWORK",
+        "reference": "PCT/US2014/049191",
+        "description": "Creating a security report for a customer network includes obtaining from a customer network, security information about the customer network, preparing, based on modification rules, the security information to create modified security information, analyzing, based on big data threat analytics, the security threats to create a number of metrics, refining the number of metrics using a refining model, creating, based on the refined number of metrics used as an input for model-based predictive analytics and the security threats, a security report representing security intelligence for the customer network in which the number of metrics are refined by a refining model and used as an input for the model-based predictive analytics.",
+        "source": {
+          "url": "https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2016018382"
+        },
+        "type": "Patent",
+        "coinventors": [{
+            "name": "Marco Casassa Mont",
+            "url": "https://www.linkedin.com/in/marcocasassamont",
+            "label": "LinkedIn"
+          },
+          {
+            "name": "Neil Passingham",
+            "url": "https://www.linkedin.com/in/gardpasscybernp/",
+            "label": "LinkedIn"
+          }
+        ],
+        "assignee": {
+          "name": "Hewlett-Packard Development Company",
+          "url": "https://www.hp.com/"
+        },
+        "applicationDate": "2014-07-31"
+      }
+    ],
+    "volunteer": [{
+        "organization": "Camberley Finnish School",
+        "position": "Treasurer",
+        "website": "http://www.suomikoulu.org",
+        "startDate": "2017-09-01",
+        "endDate": ""
+      },
+      {
+        "organization": "Camberley Finnish School",
+        "position": "Secretary",
+        "website": "http://www.suomikoulu.org",
+        "startDate": "2016-09-01",
+        "endDate": "2017-09-01"
+      }
+    ]
+  }
+  

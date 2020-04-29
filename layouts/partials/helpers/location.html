@@ -1,0 +1,23 @@
+{{- $location_data := "" -}}
+{{- $self := .self -}}
+{{- $place := "" -}}
+
+{{- $language := $self.Page.Language.Lang -}}
+{{- /*<!-- Reverse geocode request using mapbox to get place data from latitude and longitude -->*/ -}}
+{{- /*<!-- Mapbox api key necessary -->*/ -}}
+{{- /*<!-- TODO: add mapbox attribution -->*/ -}}
+
+{{- if $self.Params.general.mapbox.key -}}
+    {{- $apiURL := printf "https://api.mapbox.com/geocoding/v5/mapbox.places/%v,%v.json?types=place&language=%s&access_token=%v" .long .lat $language $self.Params.general.mapbox.key -}}
+    {{- $location_data = getJSON $apiURL -}}
+    {{- range first 1 $location_data.features -}}
+        {{- $place = .place_name -}}
+        {{- /*<!-- Mapbox "place" type includes a region, which feels too detailed to include.-->*/ -}}
+        {{- /*<!-- Region will be trimmed, if present. -->*/ -}}
+        {{- range .context -}}
+            {{- if hasPrefix .id "region." -}}
+                {{- replace $place (printf ", %s" .text) "" -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}

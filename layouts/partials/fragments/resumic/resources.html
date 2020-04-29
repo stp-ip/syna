@@ -1,0 +1,21 @@
+{{- $self := .self -}}
+{{- $resources := .resources -}}
+
+{{- if $resources -}}
+    <div class="row py-2">
+        <div class="col-12 text-center text-lg-left pl-4">
+            {{- range first 1 $resources -}}
+                <i class="fas fa-info pr-1" style="font-size: 0.7rem;line-height:1rem"></i>
+                <a class="p-0" href="{{- .url -}}">
+                    {{- .label -}}
+                </a>
+            {{- end -}}
+            {{- range last (sub (len $resources) 1) $resources -}}
+                {{- printf " | " -}}
+                <a class="p-0" href="{{- .url -}}">
+                    {{- .label -}}
+                </a>
+            {{- end -}}
+        </div>
+    </div>
+{{- end -}}

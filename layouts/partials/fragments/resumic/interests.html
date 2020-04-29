@@ -1,0 +1,59 @@
+{{- $self := .self -}}
+{{- $bg := .bg -}}
+{{- $resume := .resume -}}
+
+{{- $details := "full" -}}
+{{- with $self.Params.general.details -}}
+    {{- $details = . -}}
+{{- end -}}
+
+<!-- Group by "has keywords" and "has no keywords" to make the section visually sorted -->
+{{- $has_keywords := slice -}}
+{{- $has_no_keywords := slice -}}
+
+{{- range where $resume.interests.interests "keywords" "!=" nil -}}
+    {{- $has_keywords = $has_keywords | append . -}}
+{{- end -}}
+
+{{- range where $resume.interests.interests "keywords" nil -}}
+    {{- $has_no_keywords = $has_no_keywords | append . -}}
+{{- end -}}
+
+<div class="interests-content py-3">
+    {{- partial "fragments/resumic/heading.html" (dict "self" $self "bg" $bg "section" "interests" "icon" "fa-list-alt") -}}
+    <div class="interests-content px-4 text-center text-lg-left
+    {{- partial "helpers/text-color.html" (dict "self" $self) -}}
+    ">
+        {{- range $has_keywords -}}
+            <div class="row pt-2">
+                {{- if .name -}}
+                    <div class="col-12 col-lg-3">
+                        {{- .name -}}
+                    </div>
+                {{- end -}}
+                {{- if .keywords -}}
+                    <div class="keywords col-12 col-lg-9 py-1 pt-lg-0">
+                        {{- range .keywords -}}
+                            <span class="badge badge-pill badge-secondary align-middle m-1" style="font-size:0.7rem">
+                                {{- . -}}
+                            </span>
+                        {{- end -}}
+                    </div>
+                {{- end -}}
+            </div>
+        {{- end -}}
+        {{- if $has_no_keywords -}}
+            <div class="row pt-2">
+                <div class="col">
+                    {{- range first 1 $has_no_keywords -}}
+                        {{- .name -}}
+                    {{- end -}}
+                    {{- range last (sub (len $has_no_keywords) 1) $has_no_keywords -}}
+                        {{- printf ", %s" .name -}}
+                    {{- end -}}
+                </div>
+            </div>
+        {{- end -}}
+    </div>
+    {{- partial "fragments/resumic/summary.html" (dict "self" $self "summary" $resume.interests.summary "enclose" true) -}}
+</div>

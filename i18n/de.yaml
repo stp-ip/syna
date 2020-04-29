@@ -2,7 +2,9 @@
 - id: attribution
   translation: "Webseite basiert auf"
 - id: de
-  translation: "deutsch"
+  translation: "Deutsch"
+- id: present
+  translation: "Aktuell"
 
 # Contact Form
 - id: contact.defaultNameError
@@ -45,3 +47,7 @@
   translation: "Lebt in"
 - id: member.reportsTo
   translation: "Berichtet an"
+
+# Resumic
+- id: resumic.in
+  translation: "in"

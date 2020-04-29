@@ -1,3 +1,31 @@
+@media print {
+  @page {
+    // should be 210mm 297mm instead
+    // doubling to workaround print output using mobile view
+    // working in chromium/chrome not firefox
+    size: 420mm 594mm;
+    margin: 20mm;
+  }
+  #resumic {
+    @extend .d-print-block;
+  }
+  #resumic > .container-fluid {
+    background-color: $white !important;
+  }
+  section:not(#resumic),footer {
+    @extend .d-print-none;
+    background-color: $white;
+  }
+  .container {
+    padding: 0px !important; 
+    max-width: 100%;
+  }
+  // prevent breaking inside sections
+  .legal-content, .volunteer-content, .certificates-content, .awards-content, .references-content, .interests-content, .skills-content, .languages-content, .education-content, .work-content, .core-content, .personal-content {
+    page-break-inside: avoid;
+  }
+}
+
 .nav-link {
   color: $navbar-light-color;
 

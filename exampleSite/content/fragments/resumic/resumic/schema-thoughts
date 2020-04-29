@@ -1,0 +1,52 @@
+Ideas:
+Use bibtex or bibjson for publications? or add bibtex field 14
+filter + tags 10
+
+localization 80/81
+
+relax schema with more optional fields etc. 119
+
+theme ToDo :
+* legal
+    roles
+    description
+    applicationDate
+    legalType
+    identifier
+    currentAssignee
+    previousAssignee
+    coAuthors
+* awards
+    description
+* certificates
+    description
+* publications
+    full
+    http://okfnlabs.org/bibjson/ ?
+* sort sections in resumic.html
+* location: mapbox api key where to configure? global? proxy service? -->
+* migrate arnells resume and test design -> get feedback
+
+theme
+* default localized version to english in code?
+* localization for DE
+* color optimization especially around primary
+* check text-color usage all necessary?
+* icon text-color usage correct?
+* location: config for accuracy? country-region-city, country-city, city, region-city -->
+* fall through image support
+* base64 encoding images gotten from url (https://github.com/gohugoio/hugo/pull/5686)
+* syna resumic example using okkur projects etc. testing edge cases etc. and being checked by cypress (after all is done)
+* downloadable version aka downloadable config + code to download data as well as (PDF) - remove personal (if not shown) and obfuscate location data?
+* screen reader additions for icons
+* conformance test aka is all data possibly showing up - could be used later on to show users what fields each theme supports
+* print breaks avaoid inside resume-item
+* print should not be mobile view
+
+Iteration thoughts:
+* additional level for summary
+* section summary to have more flexibility for users to explain anomalies good or bad
+* numeric enums to remove the association and make sorting etc. easier for devs - levels now need to be documented
+* disposition data to help with making matches easier to find
+* Use go template comments with html comments as well -> {{- /*<!-- Whitelisted network names to be used for icons -->*/ -}} TODO: create issue to fix overall comments in Syna
+* use roles instead of positions to make it more standard between all sections

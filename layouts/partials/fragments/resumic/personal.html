@@ -1,0 +1,113 @@
+{{- $self := .self -}}
+{{- $bg := .bg -}}
+{{- $resume := .resume -}}
+
+{{- /*<!-- Whitelisted brand names to be used for icons -->*/ -}}
+{{- $brand_icons := slice "github" "facebook" "twitter" "angellist" "airbnb" "bitbucket" "gitlab" "blogger" "discord" "dev" "dribbble" "flickr" "foursquare" "hacker-news" "instagram" "medium" "lastfm" "linkedin" "meetup" "reddit" "spotify" "snapchat" "youtube" -}}
+
+<div class="personal">
+    <div class="row m-0 justify-content-center 
+    {{- if $resume.personal.image -}}
+      {{- printf " align-items-center" -}}
+    {{- end -}}">
+        {{- with $resume.personal.image -}}
+            <div class="col-12 col-lg-4 p-3 text-center">
+                <img src="{{- . | safeURL -}}" class="w-75 img-fluid rounded-circle border
+                    {{- partial "helpers/text-color.html" (dict "self" $self "light" "white") -}}
+                    " alt="{{- $resume.personal.name -}}"></img>
+            </div>
+        {{- end -}}
+        <div class="col-12 text-lg-left
+        {{- if $resume.personal.image -}}
+          {{- printf " col-lg-8 pb-4 pt-0 pl-lg-2 pt-lg-4 text-center" -}}
+        {{- else -}}
+          {{- printf " col-lg-12" -}}
+        {{- end -}}">
+            <div class="personal text-center text-lg-left
+            {{- partial "helpers/text-color.html" (dict "self" $self "light" "secondary") -}}
+            ">
+                <div class="mb-3 text-dark">
+                    {{- with $resume.personal.name -}}
+                    <div class="mt-5 mb-0
+                        {{- partial "helpers/text-color.html" (dict "self" $self) -}}
+                        ">
+                        <h2>
+                            {{- . -}}
+                        </h2>
+                        {{- with $resume.personal.pronouns }}
+                        <span class="pronouns badge badge-pill badge-secondary align-top mt-n2">
+                            {{- . -}}
+                        </span>
+                    {{- end -}}
+                    </div>
+                {{- end -}}
+                    {{- if and $resume.personal.birthday $self.Params.personal.birthday -}}
+                        <div class="birthday">
+                            <i class="fas fa-fw fa-birthday-cake"></i>
+                            <span>{{- $resume.personal.birthday -}}</span>
+                        </div>
+                    {{- end -}}
+                    {{- with $resume.personal.url -}}
+                        <div class="url">
+                            <i class="fa fa-fw fa-globe-americas"></i>
+                            <span><a class="url" href="{{- . -}}">{{- . -}}</a></span>
+                        </div>
+                    {{- end -}}
+                    {{- if and $resume.personal.email $self.Params.personal.email -}}
+                        <div class="email">
+                            <i class="fas fa-fw fa-at"></i>
+                            <span><a class="email" href="mailto:{{- $resume.personal.email -}}">{{- $resume.personal.email -}}</a></span>
+                        </div>
+                    {{- end -}}
+                    {{- if and $resume.personal.phone $self.Params.personal.phone -}}
+                        <div class="phone">
+                            <i class="fas fa-fw fa-phone"></i>
+                            <span>{{- $resume.personal.phone -}}</span>
+                        </div>
+                    {{- end -}}
+                    {{- with $resume.personal.currentLocation -}}
+                        <div class="currentLocation">
+                            <i class="fas fa-fw fa-map-marker-alt"></i>
+                            <span>{{- partial "helpers/location.html" (dict "self" $self "lat" .lat "long" .long) -}}</span>
+                        </div>
+                    {{- end -}}
+                    {{- if and $resume.personal.postalAddress $self.Params.personal.postal -}}
+                        <div class="postalAddress">
+                            <i class="fas fa-fw fa-envelope"></i>
+                            <span>{{- $resume.personal.postalAddress -}}</span>
+                        </div>
+                    {{- end -}}
+                    {{- if $resume.personal.profiles -}}
+                        <div class="profiles pt-2">
+                            {{- range $resume.personal.profiles -}}
+                                <div class="profile">
+                                    {{- if .url -}}
+                                        {{- if in $brand_icons (lower .network) -}}
+                                            <i class="fab fa-fw fa-{{- lower .network -}}"></i>
+                                            <span><a class="url" href="{{- .url -}}">{{- .network -}}</a></span>
+                                        {{- else -}}
+                                            <i class="fa fa-fw fa-user-circle"></i>
+                                            <span><a class="url" href="{{- .url -}}">{{- .network -}}</a></span>
+                                        {{- end -}}
+                                    {{- else -}}
+                                        {{- if in $brand_icons (lower .network) -}}
+                                            <i class="fab fa-fw fa-{{- lower .network -}}"></i>
+                                            <span>{{- printf "%s (%s)" .network .username -}}</span>
+                                        {{- else -}}
+                                            <i class="fa fa-fw fa-user-circle"></i>
+                                            <span>{{- printf "%s (%s)" .network .username -}}</span>
+                                        {{- end -}}
+                                    {{- end -}}
+                                </div>
+                            {{- end -}}
+                        </div>
+                    {{- end -}}
+                    {{- if and $resume.personal .Params.personal.extend -}}
+                        <hr>
+                        {{ partial "fragments/resumic/personal-extended.html" (dict "self" $self "resume" $resume "bg" $bg "Name" $self.Name "Params" $self.Params) }}
+                    {{- end -}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

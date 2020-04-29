@@ -1,0 +1,52 @@
+{{- $self := .self -}}
+{{- $bg := .bg -}}
+{{- $resume := .resume -}}
+
+{{- $details := "full" -}}
+{{- with $self.Params.general.details -}}
+    {{- $details = . -}}
+{{- end -}}
+
+{{- $awards := slice -}}
+{{- if $self.Params.general.sort -}}
+    {{- range sort .resume.awards.awards "startDate" "desc" -}}
+        {{- $awards = $awards | append . -}}
+    {{- end -}}
+{{- else -}}
+    {{- range .resume.awards.awards -}}
+        {{- $awards = $awards | append . -}}
+    {{- end -}}
+{{- end -}}
+
+<div class="awards-content py-3">
+    {{- partial "fragments/resumic/heading.html" (dict "self" $self "bg" $bg "section" "awards" "icon" "fa-trophy") -}}
+    <div class="awards-content px-4 text-center text-lg-left
+    {{- partial "helpers/text-color.html" (dict "self" $self) -}}
+    ">
+        {{- range $awards -}}
+            <div class="row pt-2 justify-content-between">
+                <div class="col-12 col-lg-9 text-lg-left">
+                    {{- if .name -}}
+                        <h4 class="name font-weight-bold">
+                            {{- .name -}}
+                        </h4>
+                    {{- end -}}
+                </div>
+                {{- if .date -}}
+                    <div class="col-12 col-lg-3 text-lg-right ml-auto
+                    {{- partial "helpers/text-color.html" (dict "self" $self "light" "white") -}}
+                    ">
+                        {{- .date -}}
+                    </div>
+                {{- end -}}
+            </div>
+            {{- if .entity -}}
+                <div class="row">
+                    {{- partial "fragments/resumic/entity.html" (dict "self" $self "entity" .entity) -}}
+                </div>
+            {{- end -}}
+            {{- partial "fragments/resumic/summary.html" (dict "self" $self "summary" .summary) -}}
+        {{- end -}}
+    </div>
+    {{- partial "fragments/resumic/summary.html" (dict "self" $self "summary" $resume.awards.summary "enclose" true) -}}
+</div>

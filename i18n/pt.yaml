@@ -3,6 +3,8 @@
   translation: "Website baseado em"
 - id: pt
   translation: "Português"
+- id: present
+  translation: "Atual"
 
 # Content
 - id: content.readmore
@@ -81,3 +83,7 @@
   translation: "Alterar preço"
 - id: stripe.change_currency
   translation: "Alteração de moeda"
+
+# Resumic
+- id: resumic.in
+  translation: "de"

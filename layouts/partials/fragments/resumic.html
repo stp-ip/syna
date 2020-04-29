@@ -1,0 +1,80 @@
+{{- $self := . -}}
+{{- $bg := .self.Scratch.Get "bg" }}
+{{ $file_path := "" }}
+
+{{- partial "helpers/container.html" (dict "start" true "in_slot" .in_slot "bg" $bg "Name" .Name "Params" .Params) }}
+    {{- $file_path_resume := printf "%s%s/resume.json" .page.File.Dir .Name -}}
+    {{- $file_path_resumic := printf "%s%s/resumic.json" .page.File.Dir .Name -}}
+    {{- $file_path_file := printf "%s%s/%s" .page.File.Dir .Name .Params.file -}}
+
+    {{ if fileExists $file_path_resume }}
+        {{ $file_path = $file_path_resume }}
+    {{ end }}
+
+    {{ if fileExists $file_path_resumic }}
+        {{ $file_path = $file_path_resumic }}
+    {{ end }}
+
+    {{ if fileExists $file_path_file }}
+        {{ $file_path = $file_path_file }}
+    {{ end }}
+
+    {{ if fileExists $file_path -}}
+        {{ $resume := readFile $file_path | transform.Unmarshal }}
+        {{- /*<!-- Call each partial on its own with duplication to set order and keep things simple -->*/ -}}
+        {{- /*<!-- Templating this was tried and worked, but assumed order in the data files etc. -->*/ -}}
+
+        {{- if and $resume.personal .Params.personal.show -}}
+            {{ partial "fragments/resumic/personal.html" (dict "self" $self.self "resume" $resume "bg" $bg "Name" .Name "Params" .Params) }}
+        {{- end -}}
+
+        {{- if $resume.core -}}
+            {{ partial "fragments/resumic/core.html" (dict "self" $self.self "resume" $resume "bg" $bg "Name" .Name "Params" .Params) }}
+        {{- end -}}
+
+        {{- if $resume.work -}}
+            {{- partial "fragments/resumic/work.html" (dict "self" $self.self "resume" $resume "bg" $bg "Name" .Name "Params" .Params) -}}
+        {{- end -}}
+
+        {{- if $resume.education -}}
+            {{- partial "fragments/resumic/education.html" (dict "self" $self.self "resume" $resume "bg" $bg "Name" .Name "Params" .Params) -}}
+        {{- end -}}
+
+        {{- if $resume.languages -}}
+            {{- partial "fragments/resumic/languages.html" (dict "self" $self.self "resume" $resume "bg" $bg "Name" .Name "Params" .Params) -}}
+        {{- end }}
+
+        {{- if $resume.skills -}}
+            {{- partial "fragments/resumic/skills.html" (dict "self" $self.self "resume" $resume "bg" $bg "Name" .Name "Params" .Params) -}}
+        {{- end -}}
+
+        {{- if $resume.interests -}}
+            {{- partial "fragments/resumic/interests.html" (dict "self" $self.self "resume" $resume "bg" $bg "Name" .Name "Params" .Params) -}}
+        {{- end -}}
+
+        {{- if $resume.references -}}
+            {{- partial "fragments/resumic/references.html" (dict "self" $self.self "resume" $resume "bg" $bg "Name" .Name "Params" .Params) -}}
+        {{- end -}}
+
+        {{- if $resume.awards -}}
+            {{- partial "fragments/resumic/awards.html" (dict "self" $self.self "resume" $resume "bg" $bg "Name" .Name "Params" .Params) -}}
+        {{- end -}}
+
+        {{- if $resume.certificates -}}
+            {{- partial "fragments/resumic/certificates.html" (dict "self" $self.self "resume" $resume "bg" $bg "Name" .Name "Params" .Params) -}}
+        {{- end -}}
+
+        {{- if $resume.volunteer -}}
+            {{- partial "fragments/resumic/volunteer.html" (dict "self" $self.self "resume" $resume "bg" $bg "Name" .Name "Params" .Params) -}}
+        {{- end -}}
+
+        {{- if $resume.legal -}}
+            {{- partial "fragments/resumic/legal.html" (dict "self" $self.self "resume" $resume "bg" $bg "Name" .Name "Params" .Params) -}}
+        {{- end -}}
+
+        {{- if and $resume.meta (.Params.general.meta | default true) -}}
+            {{- partial "fragments/resumic/meta.html" (dict "self" $self.self "resume" $resume "bg" $bg "Name" .Name "Params" .Params) -}}
+        {{- end -}}
+    {{- end -}}
+
+{{- partial "helpers/container.html" (dict "end" true "in_slot" .in_slot) -}}

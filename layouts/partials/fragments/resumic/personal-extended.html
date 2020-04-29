@@ -1,0 +1,92 @@
+{{- $resume := .resume -}}
+{{- $self := .self -}}
+
+{{- $date_format := "2006-01" -}}
+{{- with .date_format -}}
+    {{- $date_format = $self.Site.Params.date_format -}}
+{{- end -}}
+
+<div class="personal-extended">
+    <div class="row px-2 pt-2">
+        <div class="col">
+            <i class="fa fa-lg fa-info-circle d-lg-none"></i>
+            <div class="birthPlace row">
+                {{- with $resume.personal.birthPlace -}}
+                    <div class="col-12 col-lg-4 pt-2 pt-lg-0">
+                        <i class="fa fa-fw fa-info-circle d-none d-lg-inline"></i>
+                        <span>{{- printf "%s " (i18n "resumic.personal.birthPlace") -}}</span>
+                    </div>
+                    <div class="col-12 col-lg-auto font-italic">
+                        {{- . -}}
+                    </div>
+                {{- end -}}
+            </div>
+            <div class="citizenship row">
+                {{- with $resume.personal.citizenship -}}
+                    <div class="col-12 col-lg-4 pt-2 pt-lg-0">
+                        <i class="fa fa-fw fa-info-circle d-none d-lg-inline"></i>
+                        <span>{{- printf "%s " (i18n "resumic.personal.citizenship") -}}</span>
+                    </div>
+                    <div class="col-12 col-lg-auto font-italic">
+                        {{- . -}}
+                    </div>
+                {{- end -}}
+            </div>
+            <div class="identityGender row">
+                {{- with $resume.personal.identityGender -}}
+                    <div class="col-12 col-lg-4 pt-2 pt-lg-0">
+                        <i class="fa fa-fw fa-info-circle d-none d-lg-inline"></i>
+                        <span>{{- printf "%s " (i18n "resumic.personal.identityGender") -}}</span>
+                    </div>
+                    <div class="col-12 col-lg-auto font-italic">
+                        {{- . -}}
+                    </div>
+                {{- end -}}
+            </div>
+            <div class="legalGender row">
+                {{- with $resume.personal.legalGender -}}
+                    <div class="col-12 col-lg-4 pt-2 pt-lg-0">
+                        <i class="fa fa-fw fa-info-circle d-none d-lg-inline"></i>
+                        <span>{{- printf "%s " (i18n "resumic.personal.legalGender") -}}</span>
+                    </div>
+                    <div class="col-12 col-lg-auto font-italic">
+                        {{- . -}}
+                    </div>
+                {{- end -}}
+            </div>
+            <div class="relationshipStatus row">
+                {{- with $resume.personal.relationshipStatus -}}
+                    <div class="col-12 col-lg-4 pt-2 pt-lg-0">
+                        <i class="fa fa-fw fa-info-circle d-none d-lg-inline"></i>
+                        <span>{{- printf "%s " (i18n "resumic.personal.relationshipStatus") -}}</span>
+                    </div>
+                    <div class="col-12 col-lg-auto font-italic">
+                        {{- . -}}
+                    </div>
+                {{- end -}}
+            </div>
+            <div class="currentLocation row">
+                {{- with $resume.personal.currentLocation -}}
+                    <div class="col-12 col-lg-4 pt-2 pt-lg-0">
+                        <i class="fa fa-fw fa-info-circle d-none d-lg-inline"></i>
+                        <span>{{- printf "%s " (i18n "resumic.personal.currentLocation") -}}</span>
+                    </div>
+                    <div class="col-12 col-lg-auto font-italic">
+                        {{- partial "helpers/location.html" (dict "self" $self "lat" .lat "long" .long) -}}
+                    </div>
+                {{- end -}}
+            </div>
+            <div class="permanentLocation row">
+                {{- with $resume.personal.permanentLocation -}}
+                    <div class="col-12 col-lg-4 pt-2 pt-lg-0">
+                        <i class="fa fa-fw fa-info-circle d-none d-lg-inline"></i>
+                        <span>{{- printf "%s " (i18n "resumic.personal.permanentLocation") -}}</span>
+                    </div>
+                    <div class="col-12 col-lg-auto font-italic">
+                        {{- partial "helpers/location.html" (dict "self" $self "lat" .lat "long" .long) -}}</span>
+                    </div>
+                {{- end -}}
+            </div>
+        </div>
+    </div>
+</div>

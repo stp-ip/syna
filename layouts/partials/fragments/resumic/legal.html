@@ -1,0 +1,60 @@
+{{- $self := .self -}}
+{{- $bg := .bg -}}
+{{- $resume := .resume -}}
+
+{{- $details := "full" -}}
+{{- with $self.Params.general.details -}}
+    {{- $details = . -}}
+{{- end -}}
+
+{{- /*<!-- When sorting, sort each by startDate -->*/ -}}
+{{- $legal := slice -}}
+
+{{- if $self.Params.general.sort -}}
+    {{- range sort $resume.legal.legal "startDate" "desc" -}}
+        {{- $legal = $legal | append . -}}
+    {{- end -}}
+{{- else -}}
+    {{- range $resume.legal.legal -}}
+        {{- $legal = $legal | append . -}}
+    {{- end -}}
+{{- end -}}
+
+<div class="legal-content py-3">
+    {{- partial "fragments/resumic/heading.html" (dict "self" $self "bg" $bg "section" "legal" "icon" "fa-balance-scale") -}}
+    <div class="legal-content px-4 text-center
+    {{- partial "helpers/text-color.html" (dict "self" $self) -}}
+    ">
+        {{- range $legal -}}
+            <div class="row pt-4">
+                <div class="col-12 col-lg-10 text-lg-left
+                {{- partial "helpers/text-color.html" (dict "self" $self "light" "white") -}}
+                ">
+                    {{- if .name -}}
+                        <h6 class="name font-weight-bold">
+                            {{- .name -}}
+                        </h6>
+                    {{- end -}}
+                </div>
+                {{- if or .grantDate .endDate -}}
+                    <div class="col-12 col-lg-2 text-lg-right
+                    {{- partial "helpers/text-color.html" (dict "self" $self "light" "white") -}}
+                    ">
+                    {{- partial "helpers/range.html" (dict "self" $self "startDate" .grantDate "endDate" .endDate) -}}
+                    </div>
+                {{- end -}}
+            </div>
+            {{- if or .entity -}}
+                <div class="row">
+                    {{- partial "fragments/resumic/entity.html" (dict "self" $self "entity" .entity) -}}
+                </div>
+            {{- end -}}
+            {{- partial "fragments/resumic/resources.html" (dict "self" $self "resources" .resources) -}}
+            {{- partial "fragments/resumic/highlights.html" (dict "self" $self "highlights" .highlights) -}}
+            {{- partial "fragments/resumic/summary.html" (dict "self" $self "summary" .summary) -}}
+        {{- end -}}
+    </div>
+    {{- partial "fragments/resumic/summary.html" (dict "self" $self "summary" $resume.legal.summary "enclose" true) -}}
+</div>
+
+

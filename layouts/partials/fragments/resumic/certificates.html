@@ -1,0 +1,97 @@
+{{- $self := .self -}}
+{{- $bg := .bg -}}
+{{- $resume := .resume -}}
+
+{{- $details := "full" -}}
+{{- with $self.Params.general.details -}}
+    {{- $details = . -}}
+{{- end -}}
+
+
+{{- $certificates := slice -}}
+{{- if $self.Params.general.sort -}}
+    {{- range sort .resume.certificates.certificates "startDate" "desc" -}}
+        {{- $certificates = $certificates | append . -}}
+    {{- end -}}
+{{- else -}}
+    {{- range .resume.certificates.certificates -}}
+        {{- $certificates = $certificates | append . -}}
+    {{- end -}}
+{{- end -}}
+
+<div class="certificates-content py-3">
+    {{- partial "fragments/resumic/heading.html" (dict "self" $self "bg" $bg "section" "certificates" "icon" "fa-stamp") -}}
+    <div class="certificates-content px-4 text-center text-lg-left
+    {{- partial "helpers/text-color.html" (dict "self" $self) -}}
+    ">
+        {{- range $certificates -}}
+            <div class="row pt-3">
+                {{- if .image -}}
+                    <div class="col-12 col-lg-2" style="max-height:150px">
+                            <img class="img-fluid mh-100 float-lg-left" src="{{- .image -}}" alt="{{- printf "Image of %s" .name -}}">
+                    </div>
+                {{- end -}}
+                {{- if .image -}}
+                    <div class="col-12 col-lg-10">
+                {{- else -}}
+                    <div class="col-12">
+                {{- end -}}
+                    <div class="row pt-3 justify-content-between">
+                        <div class="col-12 col-lg-9 text-lg-left">
+                            {{- if .name -}}
+                                <h4 class="name font-weight-bold">
+                                    {{- .name -}}
+                                    {{- if .url -}}
+                                    <a class="url text-decoration-none" style="font-size: 0.6rem;line-height:1.5rem;" href="{{- .url -}}">
+                                        <i class="fas fa-external-link-alt" style="vertical-align:top;"></i>
+                                    </a>
+                                    {{- end -}}
+                                    {{- if .perpetual -}}
+                                        <div class="perpetual d-block d-lg-inline pt-1 mb-n3 mb-lg-n1">
+                                            <span class="badge badge-pill badge-primary align-top" style="font-size:0.7rem">
+                                                {{- i18n "resumic.noExpiry" -}}
+                                            </span>
+                                        </div>
+                                    {{- end -}}
+                                </h4>
+                            {{- end -}}
+                        </div>
+                        {{- if or .startDate .endDate -}}
+                            <div class="col-12 col-lg-3 text-lg-right ml-auto
+                            {{- partial "helpers/text-color.html" (dict "self" $self "light" "white") -}}
+                            ">
+                                {{- partial "helpers/range.html" (dict "self" $self "startDate" .startDate "endDate" .endDate) -}}
+                            </div>
+                        {{- end -}}
+                    </div>
+                    {{- if or .entity .verification -}}
+                        <div class="row justify-content-between">
+                            {{- partial "fragments/resumic/entity.html" (dict "self" $self "entity" .entity) -}}
+                            {{- if .verification -}}
+                                <div class="col-12 col-lg-3 ml-auto p-3 text-lg-right align-self-center
+                                {{- partial "helpers/text-color.html" (dict "self" $self "light" "secondary") -}}
+                                ">
+                                    <a class="url text-decoration-none alert alert-primary" href="{{- .verification -}}">
+                                        <i class="fas fa-check-circle"></i>
+                                        {{- printf " %s" (i18n "resumic.verify") -}}
+                                    </a>
+                                </div>
+                            {{- end -}}
+                        </div>
+                    {{- end -}}
+                </div>
+                <div class="col-12">
+                    {{- if .image -}}
+                        {{- partial "fragments/resumic/score.html" (dict "self" $self "score" .score "length" "2") -}}
+                    {{- else -}}
+                        {{- partial "fragments/resumic/score.html" (dict "self" $self "score" .score) -}}
+                    {{- end -}}
+                    <span class="badge p-1">
+                        {{- printf "%s %s" (i18n "resumic.code") .code -}}
+                    </span>
+                </div>
+            </div>
+        {{- end -}}
+    </div>
+    {{- partial "fragments/resumic/summary.html" (dict "self" $self "summary" $resume.certificates.summary "enclose" true) -}}
+</div>

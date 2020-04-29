@@ -3,6 +3,8 @@
   translation: "Website based on"
 - id: en
   translation: "English"
+- id: present
+  translation: "Present"
 
 # Content
 - id: content.readmore
@@ -81,3 +83,107 @@
   translation: "Change Price"
 - id: stripe.change_currency
   translation: "Change Currency"
+
+# Resumic
+- id: resumic.attribution
+  translation: "Resume created with"
+- id: resumic.lastModified
+  translation: "updated on"
+- id: resumic.version
+  translation: "Version"
+- id: resumic.schemaVersion
+  translation: "Schema Version"
+- id: resumic.in
+  translation: "in"
+- id: resumic.at
+  translation: "at"
+- id: resumic.verify
+  translation: "Verify"
+- id: resumic.code
+  translation: "Code:"
+- id: resumic.noExpiry
+  translation: "Does not expire"
+- id: resumic.livingNear
+  translation: "Living near"
+# Resumic Personal
+- id: resumic.personal.currentLocation
+  translation: "Current location"
+- id: resumic.personal.permanentLocation
+  translation: "Permanent location"
+- id: resumic.personal.legalGender
+  translation: "Legal gender"
+- id: resumic.personal.identityGender
+  translation: "Identifying gender"
+- id: resumic.personal.relationshipStatus
+  translation: "Relationship status"
+- id: resumic.personal.citizenship
+  translation: "Citizenship"
+- id: resumic.personal.birthPlace
+  translation: "Place of birth"
+# Resumic Disposition
+- id: resumic.disposition.workingNear
+  translation: "Open for working near"
+- id: resumic.disposition.relocationWillingness
+  translation: "Willing to relocate"
+- id: resumic.disposition.noRelocationWillingness
+  translation: "Not willing to relocate"
+- id: resumic.disposition.relocationArea
+  translation: "Relocation area:"
+- id: resumic.disposition.travelTime
+  translation: "Willing to travel for around %s%s of the time"
+- id: resumic.disposition.remote
+  translation: "Open for remote work"
+- id: resumic.disposition.noRemote
+  translation: "Not open for remote work"
+  # Resumic Headings
+- id: resumic.heading.summary
+  translation: "Summary"
+- id: resumic.heading.disposition
+  translation: "Disposition"
+- id: resumic.heading.languages
+  translation: "Languages"
+- id: resumic.heading.skills
+  translation: "Skills"
+- id: resumic.heading.education
+  translation: "Education"
+- id: resumic.heading.work
+  translation: "Work Experiences"
+- id: resumic.heading.interests
+  translation: "Interests"
+- id: resumic.heading.references
+  translation: "References"
+- id: resumic.heading.awards
+  translation: "Awards"
+- id: resumic.heading.certificates
+  translation: "Certificates"
+- id: resumic.heading.volunteer
+  translation: "Volunteering"
+- id: resumic.heading.legal
+  translation: "Legal"
+# Resumic Study Stages
+- id: resumic.primary
+  translation: "Primary Education"
+- id: resumic.secondary
+  translation: "Secondary Education"
+- id: resumic.higher
+  translation: "Higher Education"
+# Resumic Skill Levels
+- id: resumic.beginner
+  translation: "Beginner"
+- id: resumic.early
+  translation: "Early"
+- id: resumic.competent
+  translation: "Competent"
+- id: resumic.advanced
+  translation: "Advanced"
+- id: resumic.expert
+  translation: "Expert"
+# Resumic Language Levels
+- id: resumic.basic
+  translation: "Basic"
+- id: resumic.conversational
+  translation: "Conversational"
+- id: resumic.fluent
+  translation: "Fluent"
+- id: resumic.native
+  translation: "Native"

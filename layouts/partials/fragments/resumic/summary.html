@@ -1,0 +1,37 @@
+{{- $self := .self -}}
+{{- $summary := .summary -}}
+{{- $enclose := .enclose -}}
+{{- $details := "full" -}}
+{{- with $self.Params.general.details -}}
+    {{- $details = . -}}
+{{- end -}}
+
+{{- if and $summary $enclose -}}
+    <hr>
+{{- end -}}
+{{- with $summary -}}
+    <div class="summary px-3 text-justify
+    {{- partial "helpers/text-color.html" (dict "self" $self) -}}
+    ">
+        {{- if and . (eq $details "full") -}}
+            <div class="row px-0 py-2">
+                <div class="summary col-12">
+                    {{- . -}}
+                </div>
+            </div>
+        {{- end -}}
+        {{- if and . (eq $details "collapsed") -}}
+            <div class="row pl-lg-3 py-2 ">
+                <div class="summary col-12">
+                    <details>
+                        <summary>Summary</summary>           
+                            {{- . -}}
+                    </details>
+                </div>
+            </div> 
+        {{- end -}}
+    </div>
+{{- end -}}
+{{- if and $summary $enclose -}}
+    <hr>
+{{- end -}}

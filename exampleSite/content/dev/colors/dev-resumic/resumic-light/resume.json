@@ -1,0 +1,989 @@
+{
+  "$schema": "https://schema.resumic.org/tes.json",
+  "core": {
+    "summary": "Passionate about open source, technology and distributed working. Working on backend infrastructure solutions with a focus on Kubernetes and distributed Systems.",
+    "title": "Chief Everything Officer",
+    "workArea": {
+      "location": {
+        "lat": 48.2788013,
+        "long": 11.5684249
+      },
+      "radius": "remote"
+    },
+    "livingArea": {
+      "location": {
+        "lat": 48.155004,
+        "long": 11.4717963
+      },
+      "radius": "50km"
+    }
+  },
+  "personal": {
+    "name": "Michael Grosser",
+    "legalGender": "male",
+    "identityGender": "male",
+    "pronouns": "he/him",
+    "birthday": "1992-02-29",
+    "birthPlace": "Herdecke",
+    "citizenship": "Germany",
+    "relationshipStatus": "unmarried",
+    "email": "michael@grosser.io",
+    "phone": "+49 1579 23 63 228",
+    "url": "https://about.stp-ip.net",
+    "image": "https://about.stp-ip.net/assets/profile.png",
+    "permanentLocation": {
+      "lat": 48.2788013,
+      "long": 11.5684249
+    },
+    "currentLocation": {
+      "lat": 48.2788013,
+      "long": 11.5684249
+    },
+    "postalAddress": "Michael Grosser, Hauptstrasse 15, 85716 Unterschleissheim, Germany",
+    "profiles": [
+      {
+        "network": "Twitter",
+        "username": "stp_ip",
+        "url": "https://twitter.com/stp_ip"
+      },
+      {
+        "network": "Linkedin",
+        "username": "grosser",
+        "url": "https://linkedin.com/in/grosser"
+      },
+      {
+        "network": "Angellist",
+        "username": "michaelgrosser",
+        "url": "https://angel.co/michaelgrosser"
+      },
+      {
+        "network": "CrunchBase",
+        "username": "michael-grosser",
+        "url": "https://www.crunchbase.com/person/michael-grosser"
+      },
+      {
+        "network": "About.me",
+        "username": "michaelgrosser",
+        "url": "https://about.me/michaelgrosser"
+      },
+      {
+        "network": "Facebook",
+        "username": "michi.grosser",
+        "url": "https://www.facebook.com/michi.grosser"
+      },
+      {
+        "network": "Xing",
+        "username": "Michael_Grosser12",
+        "url": "https://www.xing.com/profile/Michael_Grosser12"
+      },
+      {
+        "network": "aboutme.google.com",
+        "username": "michael@stp-ip.net",
+        "url": "https://aboutme.google.com/"
+      },
+      {
+        "network": "Docker Hub",
+        "username": "stpip",
+        "url": "https://hub.docker.com/u/stpip/"
+      },
+      {
+        "network": "Github",
+        "username": "stp-ip",
+        "url": "https://github.com/stp-ip"
+      },
+      {
+        "network": "Gitlab",
+        "username": "stp-ip",
+        "url": "https://gitlab.com/stp-ip"
+      },
+      {
+        "network": "Producthunt",
+        "username": "stp_ip",
+        "url": "https://www.producthunt.com/@stp_ip"
+      },
+      {
+        "network": "Devhub Rekkur",
+        "username": "michaelg",
+        "url": "https://dev.rekkur.com/michaelg"
+      }
+    ]
+  },
+  "education": {
+    "education": [
+    {
+      "location": {
+        "lat": 51.362320,
+        "long": 7.463150
+      },
+      "area": "Psychology",
+      "studyStage": "higher",
+      "degree": "Bachelor of Science",
+      "startDate": "2015-04-01",
+      "entity": {
+        "name": "University of Hagen",
+        "description": "Biggest state distance-learning university in Germany",
+        "image": "https://www.fernuni-hagen.de/imperia/md/images/logos/logo_fernuni_hagen.svg",
+        "url": "https://www.fernuni-hagen.de/"
+      }
+    },
+    {
+      "location": {
+        "lat": 49.907271,
+        "long": 10.904850
+      },
+      "score": {
+        "value": "2.5",
+        "best": "1",
+        "worst": "6"
+      },
+      "area": "Economics/Business Administration",
+      "studyStage": "higher",
+      "degree": "Bachelor of Science",
+      "startDate": "2011-05-02",
+      "endDate": "2014-07-12",
+      "courses": [
+        "Enterpreunership (1.7)",
+        "Innovation oriented management (2.3)",
+        "Cloud Computing, Saas, Paas (2.3)"
+      ],
+      "entity": {
+        "name": "University of Bamberg",
+        "image": "https://upload.wikimedia.org/wikipedia/de/1/1f/Otto-Friedrich-Universit%C3%A4t_Bamberg_logo.svg"
+      }
+    },
+    {
+      "location": {
+        "lat": 48.269807,
+        "long": 11.581209
+      },
+      "score": {
+        "value": "2.4",
+        "best": "1",
+        "worst": "6"
+      },
+      "startDate": "2009-01-01",
+      "endDate": "2011-01-01",
+      "studyStage": "secondary",
+      "degree": "A-Levels",
+      "area": "Mathematics and Physics",
+      "entity": {
+        "name": "Carl-Orff Secondary School"
+      }
+    },
+    {
+      "location": {
+        "lat": -28.131598,
+        "long": 153.475785
+      },
+      "studyStage": "secondary",
+      "startDate": "2008-01-01",
+      "endDate": "2009-01-01",
+      "highlights": [
+        "Improve written and spoken fluency in English considerably",
+        "Live abroad within a new culture"
+      ],
+      "entity": {
+        "name": "Palm Beach Currumbin Highschool"
+      }
+    },
+    {
+      "location": {
+        "lat": 48.269807,
+        "long": 11.581209
+      },
+      "studyStage": "secondary",
+      "startDate": "2002-01-01",
+      "endDate": "2008-01-01",
+      "entity": {
+        "name": "Carl-Orff Secondary School"
+      }
+    },
+    {
+      "location": {
+        "lat": 48.278692,
+        "long": 11.566993
+      },
+      "studyStage": "primary",
+      "startDate": "1998-01-01",
+      "endDate": "2002-01-01",
+      "entity": {
+        "name": "Ganghofer Primary School"
+      }
+    }
+  ]},
+  "interests": {
+    "interests":  [
+    {
+      "name": "Sports",
+      "keywords": [
+        "Skiing",
+        "Surfing",
+        "Rock Climbing",
+        "Slackline"
+      ]
+    },
+    {
+      "name": "Open Source",
+      "keywords": [
+        "Sustainbility",
+        "Governance and Community Structure",
+        "Monetization"
+      ]
+    },
+    {
+      "name": "Technology",
+      "keywords": [
+        "Distributed Systems",
+        "DNS",
+        "Cryptocurrencies"
+      ]
+    }
+  ]},
+  "languages": {
+    "languages": [
+    {
+      "level": "4",
+      "language": "German"
+    },
+    {
+      "level": "3",
+      "language": "English"
+    }
+  ]},
+  "meta": {
+    "canonical": "https://about.stp-ip.net/assets/resume.json",
+    "lastModified": "2019-12-04T10:52:10+00:00",
+    "version": "v0.0.1",
+    "schemaVersion": "v0.0.1",
+    "uuid":  "ff8ed5db-de60-4429-8b05-fb64d0cf7a24"
+  },
+  "projects": {
+    "projects": [
+    {
+      "name": "Book: Learning CoreDNS",
+      "description": "",
+      "keywords": [
+        "CoreDNS",
+        "Oreilly"
+      ],
+      "startDate": "2019-04-01",
+      "endDate": "2019-08-01",
+      "url": "https://oreil.ly/learning-coreDNS",
+      "roles": [
+        "Technical Reviewer"
+      ],
+      "entity": "CoreDNS",
+      "type": "book"
+    },
+    {
+      "location": {
+        "lat": 52.5232282,
+        "long": 13.390101
+      },
+      "name": "Disrupt Startup Series | Google Cloud Pitch & Meet",
+      "description": "Opportunity to pitch in front of successful startup mentors, not only would you learn from successful startup mentors with experience in Google Cloud Technologies.",
+      "keywords": [
+        "Google Cloud",
+        "Startups",
+        "Berlin"
+      ],
+      "startDate": "2019-07-31",
+      "endDate": "2019-07-31",
+      "url": "https://www.eventbrite.de/e/disrupt-startup-series-google-cloud-pitch-meet-tickets-62571079784",
+      "roles": [
+        "jury"
+      ],
+      "entity": "Google Cloud for Startups",
+      "type": "pitch competition"
+    },
+    {
+      "location": {
+        "lat": 53.5256882,
+        "long": 9.9980916
+      },
+      "name": "Switching the Engine (DNS) in Kubernetes: Benchmarks and Possibilities",
+      "description": "In this talk common DNS issues such as UDP packet loss and resulting tail latency issues ared discussed. Comparing the performance and reliability of Kube-DNS and CoreDNS and spec out setups with advanced CoreDNS features such as local Daemonset caching, TCP support, prefetching, DNS over GRPC and GRPC based watches.",
+      "keywords": [
+        "Containerdays",
+        "Kubernetes",
+        "Hamburg",
+        "CoreDNS"
+      ],
+      "startDate": "2019-06-24",
+      "endDate": "2019-06-25",
+      "url": "https://containerdays.sched.com/event/Q4Mu",
+      "resources": [
+        {
+          "url": "https://www.youtube.com/watch?v=gkyA_11pjHs",
+          "label": "Recording"
+        }
+      ],
+      "roles": [
+        "Speaker"
+      ],
+      "entity": "Containerdays",
+      "type": "Talk"
+    },
+    {
+    "location": {
+      "lat": 48.1238112,
+      "long": 11.6060649
+    },
+    "name": "Clearnet to Tor: Proxying Bitcoin, Lightning and more using TXTDirect",
+    "description": "Discussion on how to move the TXTDirect tor based proxy to production",
+    "keywords": [
+      "Bitcoin",
+      "Lightning",
+      "Tor",
+      "TXTDirect"
+    ],
+    "startDate": "2019-06-01",
+    "endDate": "2019-06-01",
+    "url": "https://lightninghackday.fulmo.org",
+    "roles": [
+      "Speaker"
+    ],
+    "entity": "Lightning Hackday Munich",
+    "type": "Session"
+  },
+  {
+    "location": {
+      "lat": 41.3587205,
+      "long": 2.1301253
+    },
+    "name": "Intro: CoreDNS",
+    "description": "Introductory look at CoreDNS",
+    "keywords": [
+      "KubeCon",
+      "Kubernetes",
+      "Barcelona",
+      "CoreDNS",
+      "Intro"
+    ],
+    "startDate": "2019-05-21",
+    "endDate": "2019-05-21",
+    "url": "https://kccnceu19.sched.com/event/MPhU",
+    "resources": [
+      {
+        "url": "https://www.youtube.com/watch?v=erfYbXzQ05k",
+        "label": "Recording"
+      },
+      {
+        "url": "https://static.sched.com/hosted_files/kccnceu19/0b/KubeCon%20-%20Intro%20CoreDNS.pdf",
+        "label": "Slides"
+      }
+    ],
+    "roles": [
+      "Speaker"
+    ],
+    "entity": "Kubecon Barcelona",
+    "type": "Talk"
+  },
+    {
+      "location": {
+        "lat": 48.1238112,
+        "long": 11.6060649
+      },
+      "name": "Bitcoin Techdays",
+      "description": "Bitcoin centric 2 day mini conference in Munich targeting researchers and developers.",
+      "keywords": [
+        "Bitcoin",
+        "Security",
+        "Cryptography"
+      ],
+      "startDate": "2019-02-12",
+      "endDate": "2019-02-13",
+      "roles": [
+        "Co-Organizer"
+      ],
+      "url": "https://bitcoin-techdays.org/",
+      "entity": "Bitcoin Munich",
+      "type": "Conference"
+    },
+    {
+      "location": {
+        "lat": 47.6114338,
+        "long": -122.3322507
+      },
+      "name": "Deep Dive: CoreDNS",
+      "description": "In this deep dive session, we take a detailed look at the plugin system of CoreDNS",
+      "keywords": [
+        "KubeCon",
+        "Kubernetes",
+        "Seattle",
+        "CoreDNS",
+        "Deepdive"
+      ],
+      "startDate": "2018-12-13",
+      "endDate": "2018-12-13",
+      "url": "https://kccna18.sched.com/event/GreJ/",
+      "resources": [
+        {
+          "url": "https://www.youtube.com/watch?v=LIoC6aC--jQ",
+          "label": "Recording"
+        },
+        {
+          "url": "https://schd.ws/hosted_files/kccna18/a0/CoreDNS%20Deepdive.pdf",
+          "label": "Slides"
+        }
+      ],
+      "roles": [
+        "Speaker"
+      ],
+      "entity": "Kubecon Seattle",
+      "type": "Talk"
+    },
+    {
+      "location": {
+        "lat": 47.6114338,
+        "long": -122.3322507
+      },
+      "name": "Switching the Engine (DNS) in Kubernetes: Benchmarks and Possibilities",
+      "description": "DNS is one of the core components making Kubernetes run. It’s essential for most services and service discovery. It’s critical, underappreciated and overlooked at the same time. With the recent switch from Kube-DNS to CoreDNS as the main engine for DNS we wanted to take a retrospective look at the improvements and a future look at new possibilities.",
+      "keywords": [
+        "KubeCon",
+        "Kubernetes",
+        "Seattle",
+        "CoreDNS",
+        "Performance"
+      ],
+      "startDate": "2018-12-12",
+      "endDate": "2018-12-12",
+      "url": "https://kccna18.sched.com/event/GrWu/",
+      "resources": [
+        {
+          "url": "https://www.youtube.com/watch?v=Il-yzqBrUdo",
+          "label": "Recording"
+        },
+        {
+          "url": "https://schd.ws/hosted_files/kccna18/95/Switching%20the%20Engine.pdf",
+          "label": "Slides"
+        }
+      ],
+      "roles": [
+        "Speaker"
+      ],
+      "entity": "Kubecon Seattle",
+      "type": "Talk"
+    },
+    {
+      "location": {
+        "lat": 48.1238112,
+        "long": 11.6060649
+      },
+      "name": "From the current state and overview of the lightning Network into the protocol spec.",
+      "description": "Interactive session going through the current state and demoing applications towards the in-depth protocol spec.",
+      "keywords": [
+        "Bitcoin",
+        "Lightning",
+        "Specification",
+        "Current State",
+        "Applications"
+      ],
+      "startDate": "2018-04-28",
+      "endDate": "2018-04-28",
+      "url": "https://www.meetup.com/de-DE/Bitcoin-Munich/events/249959171/",
+      "roles": [
+        "Speaker"
+      ],
+      "entity": "Bitcoin Munich",
+      "type": "Talk"
+    },
+    {
+      "name": "Google Summe of Code for ownCloud",
+      "description": "Google Summer of Code participation for ownCloud",
+      "highlights": [
+        "Learn about performance optimizations using various layers from caching down to HHVM",
+        "Iterate through PoCs with a great design doc as an end result"
+      ],
+      "keywords": [
+        "ownCloud",
+        "Docker",
+        "Kubernetes",
+        "Go"
+      ],
+      "startDate": "2016-04-23",
+      "endDate": "2016-08-31",
+      "resources": [
+        {
+          "url": "https://summerofcode.withgoogle.com/archive/2016/projects/5532391397392384/",
+          "label": "GSoC Archive"
+        }
+      ],
+      "url": "https://s.stp-ip.net/GSoC16",
+      "roles": [
+        "Student"
+      ],
+      "entity": "ownCloud",
+      "type": "Volunteering"
+    },
+    {
+      "location": {
+        "lat": 52.5125354,
+        "long": 13.3247559
+      },
+      "name": "ownCloud Community Conference Talks",
+      "description": "Speaking about demo administration and community/monetization conflicts.",
+      "keywords": [
+        "ownCloud",
+        "Open Source",
+        "Community",
+        "Monetization"
+      ],
+      "startDate": "2014-08-30",
+      "endDate": "2014-08-30",
+      "resources": [
+        {
+          "url": "https://www.youtube.com/watch?v=Rl_UXSDcd6E",
+          "label": "Talk: ownCloud demo administration"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=zvwdT0K5kDI",
+          "label": "Talk: Community and monetization conflicts"
+        }
+      ],
+      "roles": [
+        "Speaker"
+      ],
+      "entity": "ownCloud Community Conference 2014",
+      "type": "Talk"
+    },
+    {
+      "location": {
+        "lat": 49.9019523,
+        "long": 10.8907589
+      },
+      "name": "Bitcoin ATM",
+      "description": "One of the first Bitcoin ATMs in Germany",
+      "keywords": [
+        "Bitcoin"
+      ],
+      "startDate": "2014-07-07",
+      "endDate": "2015-08-19",
+      "url": "http://log.hackerspace-bamberg.de/post/90992433175/first-open-source-bitcoin-atm-projectskyhook-and",
+      "roles": [
+        "Operator",
+        "Technical Administrator"
+      ],
+      "entity": "SeeTheProgress",
+      "type": "Work"
+    },
+    {
+      "location": {
+        "lat": 49.9019523,
+        "long": 10.8907589
+      },
+      "name": "aFlattr",
+      "description": "Enabling users to receive a 5-10% cashback for Amazon purchases available for donation via Flattr.com.",
+      "highlights": [
+        "Contributed more than 18000€ to various non-profits and creators",
+        "Concept now used at Amazon with smile.amazon.com"
+      ],
+      "keywords": [
+        "ownCloud",
+        "Docker",
+        "Kubernetes",
+        "Go"
+      ],
+      "startDate": "2011-01-10",
+      "endDate": "2014-01-07",
+      "resources": [
+        {
+          "url": "https://summerofcode.withgoogle.com/archive/2016/projects/5532391397392384/",
+          "label": "GSoC Archive"
+        }
+      ],
+      "url": "https://aflattr.com",
+      "roles": [
+        "Product Manager",
+        "Developer"
+      ],
+      "entity": "SeeTheProgress",
+      "type": "Work"
+    },
+    {
+      "name": "Klabautercast podcast: 67",
+      "description": "Speaking about Flattr, Kulturwermark and Bitcoin.",
+      "keywords": [
+        "Flattr",
+        "aFlattr",
+        "Open Source",
+        "Kulturwertmark",
+        "Bitcoin"
+      ],
+      "startDate": "2014-08-30",
+      "endDate": "2014-08-30",
+      "resources": [
+        {
+          "url": "https://klabautercast.de/folge-67-flattr-kulturwertmark-bitcoin/",
+          "label": "Podcast: Klabautercast 67: Flattr, Kulturwertmark und Bitcoin"
+        }
+      ],
+      "roles": [
+        "Podcast Guest"
+      ],
+      "entity": "Klabautercast",
+      "type": "Podcast"
+    }    
+  ]},
+  "publications": {
+    "publications": [
+    {
+      "name": "Ist Open-Source-Software ökonomisch sinnvoll? Eine perspektivengetriebene theoretische und empirische ökonomisch Analyse.",
+      "publicationDate": "2014-07-20",
+      "summary": "Is open source economically reasonable? A perspective driven theoretical and empirical economic analysis."
+    },
+    {
+      "name": "Energieübertragung durch Laser",
+      "publicationDate": "2010-12-17",
+      "summary": "\"Energy transfer through the use of lasers\": Possibility to use lasers to transfer energy from space solar farms to earth's surface."
+    }
+  ]},
+  "skills": {
+    "skills": [
+    {
+      "proficiency": "4",
+      "name": "Business Administration",
+      "keywords": [
+        "Strategy",
+        "Management",
+        "Controlling",
+        "Accounting"
+      ]
+    },
+    {
+      "proficiency": "4",
+      "name": "Project Management",
+      "keywords": [
+        "Organisation",
+        "Team leading"
+      ]
+    },
+    {
+      "proficiency": "4",
+      "name": "Programming",
+      "keywords": [
+        "Go",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "proficiency": "2",
+      "name": "Programming",
+      "keywords": [
+        "Python",
+        "Javascript"
+      ]
+    },
+    {
+      "proficiency": "4",
+      "name": "Server Administration",
+      "keywords": [
+        "Linux Administration",
+        "Google Cloud Platform",
+        "Networking"
+      ]
+    },
+    {
+      "proficiency": "4",
+      "name": "Distributed Systems",
+      "keywords": [
+        "DNS",
+        "Anycast"
+      ]
+    },
+    {
+      "proficiency": "1",
+      "name": "Tools",
+      "keywords": [
+        "LND"
+      ]
+    },
+    {
+      "proficiency": "3",
+      "name": "Tools",
+      "keywords": [
+        "Matomo",
+        "Nextcloud",
+        "Gitlab",
+        "MySQL/MariaDB",
+        "PostgreSQL",
+        "Nginx",
+        "Varnish"
+      ]
+    },
+    {
+      "proficiency": "4",
+      "name": "Tools",
+      "keywords": [
+        "Kubernetes",
+        "CoreDNS",
+        "Hugo",
+        "Caddy"
+      ]
+    }
+  ]},
+  "volunteer": {
+    "volunteer": [
+    {
+      "organization": "Earnest Capital",
+      "description": "Early stage funding for Bootstrappers",
+      "positions": ["Mentor", "Limited Partner"],
+      "url": "https://earnestcapital.com",
+      "startDate": "2018-12-01"
+    },
+    { "organization": "Google Community",
+      "positions": ["Google Developer Expert"],
+      "url": "https://developers.google.com/experts/",
+      "startDate": "2018-03-01"
+    },
+    {
+      "organization": "CoreDNS",
+      "positions": ["Maintainer"],
+      "url": "https://CoreDNS.io",
+      "startDate": "2016-11-01",
+      "highlights": [
+        "CoreDNS graduating as 4th project within the CNCF",
+        "Used by the likes of Zalando, Walmart, GitNS and more"
+      ]
+    },
+    {
+      "organization": "git-sync a Kubernetes sub-project)",
+      "positions": ["Maintainer"],
+      "url": "https://github.com/kubernetes/git-sync",
+      "startDate": "2017-03-01"
+    },
+    {
+      "organization": "Kubernetes",
+      "positions": ["Maintainer"],
+      "url": "https://kubernetes.io",
+      "startDate": "2014-10-01",
+      "highlights": [
+        "Maintain community infrastructure",
+        "Pre-proposal for Secrets and Configmap"
+      ]
+    },
+    {
+      "organization": "LND",
+      "positions": ["Minimal Contributor"],
+      "url": "https://github.com/lightningnetwork/lnd",
+      "startDate": "2017-07-01"
+    },
+    {
+      "organization": "Hugo",
+      "positions": ["Minimal Contributor"],
+      "url": "https://gohugo.io",
+      "startDate": "2017-01-01"
+    },
+    {
+      "organization": "Caddy",
+      "positions": ["Contributor"],
+      "url": "https://caddyserver.com",
+      "startDate": "2016-04-01",
+      "highlights": [
+        "Move Caddy to Go modules"
+      ]
+    },
+    {
+      "organization": "JSON Resume",
+      "positions": ["Maintainer"],
+      "url": "https://github.com/jsonresume/resume-schema",
+      "startDate": "2015-12-01"
+    },
+    {
+      "organization": "Gitlab",
+      "positions": ["Contributor"],
+      "url": "https://gitlab.org",
+      "startDate": "2014-01-01",
+      "endDate": "2016-01-01"
+    },
+    {
+      "organization": "Nextcloud",
+      "positions": ["System Administrator"],
+      "url": "https://nextcloud.org",
+      "startDate": "2016-06-02",
+      "highlights": [
+        "Full stack maintainance for community services including Nextcloud demo installation"
+      ],
+      "endDate": "2017-01-01"
+    },
+    {
+      "location": {
+        "lat": 49.9019523,
+        "long": 10.8907589
+      },
+      "organization": "backspace e.V.",
+      "positions": ["Sponsorship Officer"],
+      "url": "https://hackerspace-bamberg.de",
+      "startDate": "2011-11-23",
+      "highlights": [
+        "Co-founded non-profit association",
+        "Identifying, acquiring and maintaining sponsorship relationships"
+      ],
+      "endDate": "2015-01-01"
+    },
+    {
+      "organization": "ownCloud",
+      "positions": ["System Administrator"],
+      "url": "https://owncloud.org",
+      "startDate": "2011-05-01",
+      "highlights": [
+        "Operated biggest ownCloud installation until 2014",
+        "Full stack maintainance for community services including ownCloud demo installation",
+        "Provided analytics services for all community pages/services"
+      ],
+      "endDate": "2017-01-01"
+    },
+    {
+      "location": {
+        "lat": 48.2696463,
+        "long": 11.5795028
+      },
+      "organization": "Carl-Orff Secondary School ",
+      "positions": ["Various"],
+      "url": "http://www.carl-orff-gym.de",
+      "startDate": "2006-01-01",
+      "endDate": "2011-01-01",
+      "highlights": [
+        "2006 - 2007 Finance delegate for student council (accounting, sponsor relations, etc.)",
+        "2007 - 2008 Head of student council (project organisation, coordination with headmaster and teacher council, etc.)",
+        "2009 - 2011 Head of senior year representatives (creation of information infrastructure, organisation of working teams, etc.)",
+        "2007 - 2011 Teamlead for technical projects (setup infrastructure/requisites for concerts/plays/events)",
+        "2007 - 2011 Audio Editor (live audio mixing)"
+      ]
+    }
+  ]},
+  "work": {
+    "work": [
+    {
+      "location": {
+        "lat": 48.135124,
+        "long": 11.581981
+      },
+      "entity": {
+        "name": "Rekkur Solutions",
+        "description": "Creating and supporting distributed architectures.",
+        "image": "https://about.rekkur.com/images/logo_color.svg",
+        "url": "https://about.rekkur.com"
+      },
+      "positions": ["Founder", "Infrastructure Architect"],
+      "highlights": [
+        "Brought txtd.io (hosted TXTDirect) to multi million requests per month",
+        "Brought GitNS.com from idea to globally distributed anycast production service"
+      ],
+      "startDate": "2018-11-01",
+      "summary": "With our experiences of running world spanning distributed systems such as GitNS -a git based DNS provider- and txtd -a redirect and vanity url service- we are supporting enterprises with advise on their architectures with a focus on Kubernetes, CoreDNS and networking including trainings and hands-on work."
+    },
+    {
+      "location": {
+        "lat": 48.135124,
+        "long": 11.581981
+      },
+      "entity": {
+        "name": "Okkur Labs",
+        "description": "Open Source Lab focused on making open source sustainable.",
+        "image": "https://about.okkur.org/images/logo.svg",
+        "url": "https://about.okkur.org"
+      },
+      "positions": ["Founder"],
+      "highlights": [
+        "Maintainership for Kubernetes and CoreDNS",
+        "Created TXTDirect, Syna, Resumic, Reposeed and more"
+      ],
+      "startDate": "2018-11-01",
+      "summary": "With a passion for open source a need for a separate entity that could separately persue non-profit and research projects was established. Under the Okkur Labs umbrella a team of payed maintainers created and keep maintaining a variety of projects such as Syna -a highly flexible open source theme-  TXTDirect- a DNS TXT record based redirect and vanity URL engine- as well as Resumic -a Resume standard- and more."
+    },
+    {
+      "location": {
+        "lat": 48.135124,
+        "long": 11.581981
+      },
+      "entity": {
+        "name": "nzt.capital",
+        "description": "Investment firm investing in emerging founders and technology.",
+        "image": "https://about.nzt.capital/images/logo_color.svg",
+        "url": "https://about.nzt.capital"
+      },
+      "positions": ["Technical Partner"],
+      "startDate": "2016-01-01",
+      "highlights": [
+        "Investments in Bitstamp, Monzo, Backstage Capital and Earnest Capital"
+      ]
+    },
+    {
+      "location": {
+        "lat": 48.135124,
+        "long": 11.581981
+      },
+      "entity": {
+        "name": "SeeThePogress",
+        "description": "Services around open source such as Kubernetes."
+      },
+      "positions": ["Founder"],
+      "startDate": "2010-03-05",
+      "endDate": "2018-12-31",
+      "highlights": [
+        "Brought multiple Kubernetes clusters and supporting infrastructure to production",
+        "Closely worked with select teams on Kubernetes bugs including upstream fixes",
+        "Created aFlattr in cooperation with Flattr and Amazon. Later replaced by smile.amazon.com"
+      ],
+      "summary": "Supporting companies such as Trumpf, Bechtle and more around distributed systems and infrastructure projects including hands-on work as well as trainings."
+    },
+    {
+      "location": {
+        "lat": 37.774929,
+        "long": -122.419418
+      },
+      "entity": {
+        "name": "Bountysource",
+        "description": "Open Source Bounty platform"
+      },
+      "positions": ["Consultant (Product, Open Source, Community)"],
+      "startDate": "2014-04-01",
+      "endDate": "2014-08-01",
+      "highlights": [
+        "Created a full platform revamp including user segmentation and workflows",
+        "Lead the technical team in absence of general management"
+      ]
+    },
+    {
+      "location": {
+        "lat": 48.117125,
+        "long": 11.748137
+      },
+      "entity": {
+        "name": "Psychiatric Clinic Haar",
+        "description": "Psychiatric Clinic",
+        "url": "http://www.krankenhaus-haar.de/"
+      },
+      "positions": ["School Intern"],
+      "summary": "Assisting in physical therapy and counseling",
+      "highlights": [
+        "Attended and participated in patient sessions",
+        "Worked through complete patient histories"
+      ],
+      "startDate": "2008-02-24",
+      "endDate": "2008-02-29"
+    },
+    {
+      "location":  {
+        "lat": 48.283215,
+        "long": 11.564075
+      },
+      "entity": {
+        "name": "Subway",
+        "description": "Fast food chain restaurant",
+        "url": "http://subway-unterschleissheim.de/"
+      },
+      "positions": ["Sandwich Artist"],
+      "startDate": "2009-01-01",
+      "endDate": "2011-01-01"
+    },
+    {
+      "positions": ["Waiter"],
+      "startDate": "2007-01-01",
+      "endDate": "2011-01-01"
+    }
+  ]}
+}

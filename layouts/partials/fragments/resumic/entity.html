@@ -1,0 +1,41 @@
+{{- $self := .self -}}
+{{- $entity := .entity -}}
+{{- $name := $entity.name -}}
+{{- $description := $entity.description -}}
+{{- $url := $entity.url -}}
+{{- $image := $entity.image -}}
+
+{{- $image_only := $self.Params.general.image_only | default false -}}
+
+{{- if or $image $name -}}
+    {{- if $image -}}
+        <div class="col-12 col-lg-2 pl-4" style="max-height:60px">
+                <img class="img-fluid mh-100 float-lg-left" src="{{- $image | safeURL -}}" alt="{{- printf "Image of %s" $name -}}">
+                {{- /*<!-- Show url only if name is not available or is configured to be replaced by image -->*/ -}}
+                {{- if or (and $url $image_only $name) (and $url (not $name)) -}}
+                    <a class="url text-decoration-none d-flex" style="font-size: 0.6rem;line-height:1.5rem;" href="{{- $url -}}">
+                        <i class="fas fa-external-link-alt" style="vertical-align:top;"></i>
+                    </a>
+                {{- end -}}
+        </div>
+    {{- end -}}
+    {{- /*<!-- Show name only if image is not set or image is configured to replace name -->*/ -}}
+    {{- if or (and $name (not $image)) (and $name (not $image_only)) -}}
+        <div class="col-12 col-lg-7 pl-4 text-lg-left align-self-center
+        {{- partial "helpers/text-color.html" (dict "self" $self "light" "secondary") -}}
+        ">
+            <span class="name">
+                {{- $name -}}
+                {{- if $url -}}
+                    <a class="url text-decoration-none" style="font-size: 0.6rem;line-height:1.5rem;" href="{{- $url -}}">
+                        <i class="fas fa-external-link-alt" style="vertical-align:top;"></i>
+                    </a>
+                {{- end -}}
+            </span>
+            {{- if $description -}}
+                <span class="d-none d-lg-inline">{{ printf " ‒ " }}</span>
+                <span class="description d-block d-lg-inline font-italic">{{- $description -}}</span>
+            {{- end -}}
+        </div>
+    {{- end -}}
+{{- end -}}

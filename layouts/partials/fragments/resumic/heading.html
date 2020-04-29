@@ -1,0 +1,20 @@
+{{- $section := .section -}}
+{{- $icon := .icon -}}
+{{- $bg := .bg -}}
+
+<div class="{{- $section -}}-title px-0 text-primary">
+    <h2 class="text-center text-lg-left my-0">
+        <span class="fa-stack fa ml-2" title="{{- $section -}}">
+            <i class="fas fa-circle fa-stack-2x
+                {{- if eq $bg "primary" -}}
+                {{- print " text-dark" -}}
+                {{- end -}}
+            "></i>
+            <i class="fas {{- printf " %s " $icon -}} fa-stack-1x fa-inverse"></i>
+            <span class="sr-only">{{- i18n (printf "resumic.heading.%s" $section) -}}</span>
+        </span>
+        <span class="d-block d-lg-inline">
+            {{- i18n (printf "resumic.heading.%s" $section) -}}
+        </span>
+    </h2>
+</div>

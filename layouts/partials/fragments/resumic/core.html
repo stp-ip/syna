@@ -1,0 +1,101 @@
+{{- $self := .self -}}
+{{- $bg := .bg -}}
+{{- $resume := .resume -}}
+
+<div class="core-content py-4">
+    <div class="tagline px-0 text-dark">
+        <h2 class="text-center text-lg-left">
+            <span class="fa-stack fa ml-2" title="tagline">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-user-alt fa-stack-1x fa-inverse"></i>
+                <span class="sr-only">{{- $resume.core.title -}}</span>
+            </span>
+            <span class="d-block d-lg-inline">
+                {{- $resume.core.title -}}
+            </span>
+        </h2>
+    </div>
+    <div class="row core-content px-4 pt-2 text-center text-lg-left 
+    {{- partial "helpers/text-color.html" (dict "self" $self) -}}
+    ">
+        {{- if and $resume.core.disposition ($self.Params.general.disposition | default true) -}}
+            <div class="col-12 col-lg-6">
+                <div class="row">
+                    {{- with $resume.core.livingArea -}}
+                        {{- /*<!-- Not using radius as we a non specific location currently -->*/ -}}
+                        {{- with .location -}}
+                            <div class="livingArea col-12">
+                                <i class="fa fa-map-marker-alt fa-fw mr-1"></i>
+                                {{- printf "%s " (i18n "resumic.livingNear") -}}
+                                {{- partial "helpers/location.html" (dict "self" $self "lat" .lat "long" .long) -}}
+                            </div>
+                        {{- end -}}
+                    {{- end -}}
+                    {{- if ne $resume.core.disposition.remote nil -}}
+                        <div class="remote col-12">
+                            {{- if $resume.core.disposition.remote -}}
+                                <i class="fa fa-globe fa-fw mr-1"></i>
+                                {{- i18n "resumic.disposition.remote" -}}
+                            {{- else if eq $resume.core.disposition.remote false -}}
+                                <i class="fa fa-globe fa-fw mr-1"></i>
+                                {{- i18n "resumic.disposition.noRemote" -}}
+                            {{- end -}}
+                        </div>
+                    {{- end -}}
+                    {{- with $resume.core.disposition.workArea -}}
+                        <div class="workArea col-12">
+                            <i class="fa fa-briefcase fa-fw mr-1"></i>
+                                {{- printf "%s " (i18n "resumic.disposition.workingNear") -}}
+                                {{- partial "helpers/location.html" (dict "self" $self "lat" .location.lat "long" .location.long) -}}
+                                {{- if .radius -}}
+                                    {{- printf " + %s" .radius -}}
+                                {{- end -}}
+                        </div>
+                    {{- end -}}
+                    {{- with $resume.core.disposition.travelTime -}}
+                        <div class="travelTime col-12">
+                                <i class="fas fa-suitcase-rolling fa-fw mr-1"></i>
+                                {{- printf (i18n "resumic.disposition.travelTime") . "%" -}}
+                        </div>
+                    {{- end -}}
+                    {{- if ne $resume.core.disposition.relocation.willingness nil -}}
+                        {{- if $resume.core.disposition.relocation.willingness -}}
+                            <div class="relocationWillingness col-12">
+                                <i class="fas fa-plane fa-fw mr-1"></i>
+                                {{- i18n "resumic.disposition.relocationWillingness" -}}
+                            </div>
+                            {{- with $resume.core.disposition.relocation.area -}}
+                                <div class="relocationArea col-12">
+                                        <i class="fas fa-map-marked-alt fa-fw mr-1"></i>
+                                        {{- printf "%s %s" (i18n "resumic.disposition.relocationArea") . -}}
+                                </div>
+                            {{- end -}}
+                        {{- else if eq $resume.core.disposition.relocation.willingness false -}}
+                            <div class="relocationWillingness col-12">
+                                <i class="fas fa-plane-slash fa-fw mr-1"></i>
+                                {{- i18n "resumic.disposition.noRelocationWillingness" -}}
+                            </div>
+                        {{- end -}}
+                    {{- end -}}
+                    {{- if $resume.core.disposition.authorization -}}
+                        <div class="authorizations col-12">
+                            {{- range first 1 $resume.core.disposition.authorization -}}
+                                <i class="fas fa-stamp fa-fw mr-1"></i>
+                                {{- i18n "resumic.disposition.authorization" -}}
+                                {{- . -}}
+                            {{- end -}}
+                            {{- range last (sub (len $resume.core.disposition.authorization) 1) $resume.core.disposition.authorization -}}
+                                {{- printf ", %s" . -}}
+                            {{- end -}}                     
+                        </div>
+                    {{- end -}}
+                </div>
+            </div>
+        {{- end -}}
+        {{- with $resume.core.summary -}}
+            <div class="summary col-12 col-lg-6 test-justify-block alert alert-secondary">
+                {{- . -}}
+            </div>
+        {{- end }}
+    </div>
+</div>
